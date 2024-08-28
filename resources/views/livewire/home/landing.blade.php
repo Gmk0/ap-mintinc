@@ -63,7 +63,7 @@
                                 <span class="section-heading__subtitle">
                                     <span class="font-semibold text-gradient">Apropos de nous</span>
                                 </span>
-                                <h2 class="text-4xl section-heading__title">
+                                <h2 class="text-2xl lg:text-4xl section-heading__title">
                                     Votre nouvelle maison vous attend—nous vous aidons à y arriver rapidement.
                                 </h2>
 
@@ -231,11 +231,11 @@
             <!-- ====================== property Type Five End =============================== -->
             <!-- ===================== Choose Us Start =========================== -->
             <section class="px-6 bg-gray-900 choose-us padding-y-120">
-                <div class="container px-6 mx-auto">
+                <div class="container px-2 mx-auto lg:px-6">
                     <div class="flex flex-col gap-4 lg:flex-row">
                         <div class="w-full lg:w-6/12">
                             <div class="choose-us__thumb">
-                                <div class="p-4 choose-us__thumb-inner">
+                                <div class="p-0 lg:p-4 choose-us__thumb-inner">
                                     <img src="/images/house/2.png" alt="Choose Us" class="h-[350px] w-full  img cover-img  object-cover">
                                     <a href="https://youtu.be/QuEH0KWtePE?si=msOrdbAFR-hDUJqT"
                                         class="popup-video-link video-popup__button">
@@ -249,8 +249,8 @@
                             <div class="choose-us__content">
                                 <div class="mb-0 section-heading style-left">
                                     <span class="bg-gray-700 section-heading__subtitle"> <span class="text-gradient fw-semibold">Pourquoi nous choisir?</span> </span>
-                                    <h2 class="text-white section-heading__title">Transformez Vos Projets Immobiliers en Réalité</h2>
-                                    <p class="text-base text-gray-200 section-heading__desc fw-light">
+                                    <h2 class="text-2xl text-white lg:text-4xl section-heading__title">Transformez Vos Projets Immobiliers en Réalité</h2>
+                                    <p class="text-base text-justify text-gray-200 section-heading__desc fw-light">
                                         Choisissez AP MANAGEMENT INTERNATIONAL INC pour notre expertise complète en gestion de projets, vente de maisons, et
                                         approbation municipale. Nous offrons une planification stratégique sur mesure et optimisons chaque aspect de vos
                                         transactions résidentielles. Avec notre approche intégrée, nous réduisons les risques et maximisons la rentabilité
@@ -278,7 +278,7 @@
                         <span class="section-heading__subtitle">
                             <span class="text-gradient fw-semibold">Nos Dernières Offres</span>
                         </span>
-                        <h2 class="section-heading__title">Vivez Votre Meilleure Vie dans Votre Nouvelle Maison</h2>
+                        <h2 class="text-2xl text-4xl section-heading__title">Vivez Votre Meilleure Vie dans Votre Nouvelle Maison</h2>
                     </div>
                     </div>
                     <div class="property-five-slider arrow-style-two">
@@ -295,11 +295,11 @@
             </section>
             <!-- ======================= Property Section End ===================== -->
             <!-- ========================== Gallery Section Start ============================== -->
-            <section class="px-6 bg-white gallery-section padding-y-120">
+            <section class="px-6 py-2 bg-white gallery-section">
                 <div class="container container-two">
                     <div class="section-heading">
                         <span class="bg-transparent section-heading__subtitle"> <span class="text-gradient fw-semibold">Notre Galerie</span> </span>
-                        <h2 class="section-heading__title">Déverrouillez la porte de votre nouvelle maison avec nous.</h2>
+                        <h2 class="text-2xl section-heading__title lg:text-4xl">Déverrouillez la porte de votre nouvelle maison avec nous.</h2>
                     </div>
                     <div class="grid grid-cols-12 gap-4">
                         <div class="col-span-5 lg:col-span-4 ">

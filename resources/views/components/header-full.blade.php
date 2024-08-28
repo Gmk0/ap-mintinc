@@ -25,11 +25,9 @@
                                 <a href="javascript:void(0)" class="nav-menu__link">Services</a>
                                 <ul class="nav-submenu">
                                     <li class="nav-submenu__item">
-                                        <a href="project.html" class="nav-submenu__link"> Project </a>
+                                        <a href="{{route('projet')}}" class="nav-submenu__link"> Project </a>
                                     </li>
-                                    <li class="nav-submenu__item">
-                                        <a href="project-details.html" class="nav-submenu__link">Project Details</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="nav-menu__item">
