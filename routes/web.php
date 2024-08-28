@@ -4,9 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
 
-Route::get('/home2', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -19,6 +17,9 @@ Volt::route('/projects/details', 'projects.detailproject')->name('project.detail
 Volt::route('/projects', 'project')->name('projet');
 
 Volt::route('/property/details', 'property.detailproperty')->name('property.detailproperty');
+
+Volt::route('/sell-property', 'property.sellproperty')->name('property.sellproperty');
+
 
 Volt::route('/property', 'property.allproperty')->name('property.allproperty');
 

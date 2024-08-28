@@ -14,28 +14,28 @@
 
                         <ul class="nav-menu flx-align ">
                             <li class="nav-menu__item">
-                                <a href="{{route('home')}}" class="nav-menu__link">Accueil</a>
+                                <a href="{{route('home')}}" class="nav-menu__link">{{__('brand.home')}}</a>
 
                             </li>
                             <li class="nav-menu__item ">
-                                <a href="{{route('property.allproperty')}}" class="nav-menu__link">Proprietes</a>
+                                <a href="{{route('property.allproperty')}}" class="nav-menu__link">{{__('brand.property')}}</a>
                           
                             </li>
                             <li class="nav-menu__item has-submenu">
-                                <a href="javascript:void(0)" class="nav-menu__link">Services</a>
+                                <a href="javascript:void(0)" class="nav-menu__link">{{__('brand.services')}}</a>
                                 <ul class="nav-submenu">
                                     <li class="nav-submenu__item">
-                                        <a href="{{route('projet')}}" class="nav-submenu__link"> Project </a>
+                                        <a href="{{route('projet')}}" class="nav-submenu__link"> {{__('brand.Project')}} </a>
                                     </li>
                                     
                                 </ul>
                             </li>
                             <li class="nav-menu__item">
-                                <a href="{{route('about')}}" class="nav-menu__link">A propos de nous</a>
+                                <a href="{{route('about')}}" class="nav-menu__link">{{__('brand.about_us')}}</a>
 
                             </li>
                             <li class="nav-menu__item">
-                                <a href="{{route('contact')}}" class="nav-menu__link">Contact</a>
+                                <a href="{{route('contact')}}" class="nav-menu__link">{{__('brand.contact')}}</a>
                             </li>
                         </ul>
                     </div>

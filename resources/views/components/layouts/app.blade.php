@@ -106,7 +106,7 @@
         <!-- main js -->
         <script src="/assets/js/main.js"></script>
 
-        @livewireScriptConfig
+     @livewireScriptConfig
 
 
     </body>

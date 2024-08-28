@@ -20,7 +20,7 @@ new class extends Component {
     <!-- ==================== Breadcrumb End Here ==================== -->
 
     <!-- ============================= About Section Start =========================== -->
-    <section class="py-16 bg-white lg:py-32 about-three">
+    <section class="py-8 bg-white lg:py-8 about-three">
         <div class="px-6 container-two">
             <div class="grid grid-cols-12 gap-4 ">
                 <div class="col-span-12 lg:col-span-6">
@@ -41,7 +41,7 @@ new class extends Component {
                         <div class="section-heading style-left">
                             <span class="bg-gray-100 section-heading__subtitle"> <span
                                     class="text-gradient fw-semibold">About</span> </span>
-                            <h2 class="section-heading__title">Votre vision notre Objectif</h2>
+                            <h2 class="text-2xl text-4xl section-heading__title">Votre vision notre Objectif</h2>
                             <p class="text-justify section-heading__desc font-18">Chez AP MANAGEMENT INTERNATIONAL INC, nous planifions stratégiquement des projets immobiliers, qu’ils soient
                             résidentiels. Notre expertise en matière d’urbanisme, d’architecture paysagère et d’urbanisme, en étroite collaboration
                             avec des disciplines connexes telles que l’environnement, le génie civil et l’architecture, nous permet d’identifier les
@@ -67,11 +67,11 @@ new class extends Component {
             <div class="section-heading style-left">
                 <span class="bg-white section-heading__subtitle"> <span class="text-gradient fw-semibold">Property
                         Type</span> </span>
-                <h2 class="section-heading__title">Investing in real estate made it lot easy</h2>
+                <h2 class="text-2xl text-4xl section-heading__title">Investing in real estate made it lot easy</h2>
             </div>
             <div class="grid grid-cols-12 gap-4">
 
-                <div class="col-span-12 lg:col-span-6 col-xs-6">
+                <div class="col-span-12 lg:col-span-6 ">
                     <div class="property-type-three-item d-flex align-items-start">
                         <span class="flex-shrink-0 property-type-three-item__icon">
                             <img src="assets/images/icons/ppty-type-icon2.svg" alt="">
@@ -104,7 +104,7 @@ new class extends Component {
                 <div class="section-heading__inner">
                     <span class="section-heading__subtitle"> <span class="text-gradient fw-semibold">Nos 
                             Professionnl</span> </span>
-                    <h2 class="section-heading__title">Investment and Growth through Real Estate</h2>
+                    <h2 class="text-2xl text-4xl section-heading__title">Investment and Growth through Real Estate</h2>
                 </div>
                 <a href="#" class="hidden btn btn-main">Learn More <span class="icon-right"> <i class="fas fa-plus"></i>
                     </span>

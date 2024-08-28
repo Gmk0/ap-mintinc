@@ -12,12 +12,12 @@ new class extends Component {
 <!-- ==================== Breadcrumb End Here ==================== -->
 
 <!-- ======================== Property Section Start ============================ -->
-<section class="py-32 bg-gray-100 property">
+<section class="py-8 bg-gray-100 property">
     <div class="container px-12 container-two">
         <div class="property-filter">
             <form action="#">
                 <div class="grid grid-cols-12 gap-4">
-                    <div class="col-span-3 lg:col-span-2 sm:col-span-6 col-xs-6">
+                    <div class="col-span-6 lg:col-span-2 ">
                         <div class="select-has-icon">
                             <select class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
                                 <option value="Status" disabled selected>Status</option>
@@ -30,7 +30,7 @@ new class extends Component {
                             </span>
                         </div>
                     </div>
-                    <div class="col-span-3 lg:col-span-3 sm:col-span-6 col-xs-6">
+                    <div class="col-span-6 lg:col-span-3 ">
                         <div class="select-has-icon">
                             <select class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
                                 <option value="Type" disabled selected>Type</option>
@@ -45,7 +45,7 @@ new class extends Component {
                             </span>
                         </div>
                     </div>
-                    <div class="col-span-3 lg:col-span-4 sm:col-span-6 col-xs-6">
+                    <div class="col-span-6 lg:col-span-4 ">
                         <div class="select-has-icon">
                             <select class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
                                 <option value="Location" disabled selected>Location</option>
@@ -61,7 +61,7 @@ new class extends Component {
                             </span>
                         </div>
                     </div>
-                    <div class="col-span-3 lg:col-span-3 sm:col-span-6 col-xs-6">
+                    <div class="col-span-6 lg:col-span-3">
                         <div class="position-relative">
                             <input type="text" class="text-gray-800 common-input common-input--withLeftIcon pill"
                                 placeholder="Advanced Filter">
@@ -72,15 +72,15 @@ new class extends Component {
                     </div>
                 </div>
             </form>
-            <div class="gap-2 property-filter__bottom flx-between">
+            <div class="flex items-center justify-between gap-2 property-filter__bottom">
                 <span class="text-gray-800 property-filter__text font-18">Showing 1-10 of 23</span>
-                <div class="flex items-center gap-2">
-                    <div class="flex items-center gap-2 ml-4 list-grid">
+                <div class="flex items-center justify-between gap-2">
+                    <div class="items-center !hidden gap-2 lg:flex lg:ml-4 list-grid">
                         <button class="list-grid__button grid-button active text-body"><i
                                 class="las la-border-all"></i></button>
                         <button class="list-grid__button list-button text-body"><i class="las la-list"></i></button>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-between gap-2">
                         <span class="text-gray-800 property-filter__text font-18"> Sort by: </span>
                         <div class="select-has-icon">
                             <select class="px-3 py-2 text-gray-800 form-select common-input pill">
@@ -96,10 +96,10 @@ new class extends Component {
             </div>
         </div>
 
-        <div class="grid grid-cols-12 gap-6 list-grid-item-wrapper show-two-item">
+        <div class="grid grid-cols-12 gap-6 mt-6 md:mt-0 list-grid-item-wrapper show-two-item">
            
             @for($i=0;$i<10;$i++)
-            <div class="sm:col-span-6 lg:col-span-4">
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
                 <div class="property-item style-two">
                     <div class="property-item__thumb">
                         <a href="property-details.html" class="link">

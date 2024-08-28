@@ -7,11 +7,10 @@
                         <div class="col-span-1">
                             <div class="banner-inner position-relative">
                                 <div class="banner-content">
-                                    <h1 class="banner-content__title">Concrétisons ensemble votre projet immobilier.</h1>
-                                    <p class="banner-content__desc font-18">De la conception à la réalisation, nous sommes à vos
-                                        côtés pour vous accompagner à chaque étape</p>
+                                    <h1 class="banner-content__title ">{{__('brand.landing_title')}}</h1>
+                                    <p class="banner-content__desc font-18">{{__('brand.landing_description')}}</p>
                                     <div class="banner-content__button">
-                                        <a href="#" class="btn btn-main fw-normal"> voir plus
+                                        <a href="#" class="btn btn-main fw-normal"> {{__('brand.more')}}
                                             <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span>
                                         </a>
                                     </div>
@@ -61,34 +60,30 @@
                            <div class="about-contents">
                             <div class="text-left section-heading">
                                 <span class="section-heading__subtitle">
-                                    <span class="font-semibold text-gradient">Apropos de nous</span>
+                                    <span class="font-semibold text-gradient">{{__('brand.about_us')}} </span>
                                 </span>
                                 <h2 class="text-2xl lg:text-4xl section-heading__title">
-                                    Votre nouvelle maison vous attend—nous vous aidons à y arriver rapidement.
-                                </h2>
+                                   
+                                {{__('brand.about_title')}}</h2>
 
                                 <ul class="mt-4 lg:mt-5 check-list">
                                     <li class="flex items-center check-list__item">
                                         <span class="icon"><i class="fas fa-check"></i></span>
                                         <span class="text-base font-normal text-gray-700 ">
-                                            Transformez vos ambitions immobilières en succès grâce à notre gestion stratégique de propriétés.
-                                        </span>
+                                           {{__('brand.about_desc_1')}} </span>
                                     </li>
                                     <li class="flex items-center check-list__item">
                                         <span class="icon"><i class="fas fa-check"></i></span>
                                         <span class="text-base font-normal text-gray-700 ">
-                                            Laissez-nous vous guider vers la réalisation de votre projet immobilier de rêve.
-                                        </span>
+                                            {{__('brand.about_desc_2')}} </span>
                                     </li>
                                 </ul>
 
-                                <p class="text-gray-700 section-heading__desc">
-                                    L'immobilier résidentiel réinventé : trouvez, vendez, ou louez votre prochaine propriété avec nous.
-                                </p>
+                                <p class="text-gray-700 section-heading__desc">{{__('brand.about_desc_f')}}</p>
 
                                 <div class="mt-4">
                                     <a href="#" class="font-semibold text-gray-900 simple-btn">
-                                        Voir plus
+                                        {{__('brand.see_more')}}
                                         <span class="icon-right text-gradient"><i class="fas fa-arrow-right"></i></span>
                                     </a>
                                 </div>
@@ -136,9 +131,9 @@
                 <div class="container mx-auto">
                     <div class="mb-8 text-center section-heading">
                         <span class="section-heading__subtitle">
-                            <span class="font-semibold text-gradient">Services</span>
+                            <span class="font-semibold text-gradient">{{__('brand.services')}}</span>
                         </span>
-                        <h2 class="text-2xl font-bold section-heading__title">Notre Expertise</h2>
+                        <h2 class="text-2xl font-bold section-heading__title">{{__('brand.our_expertise')}}</h2>
                     </div>
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <div class="flex items-start property-type-three-item">
@@ -248,13 +243,10 @@
                         <div class="order-first w-full lg:order-last lg:w-6/12 lg:pl-5">
                             <div class="choose-us__content">
                                 <div class="mb-0 section-heading style-left">
-                                    <span class="bg-gray-700 section-heading__subtitle"> <span class="text-gradient fw-semibold">Pourquoi nous choisir?</span> </span>
-                                    <h2 class="text-2xl text-white lg:text-4xl section-heading__title">Transformez Vos Projets Immobiliers en Réalité</h2>
+                                    <span class="bg-gray-700 section-heading__subtitle"> <span class="text-gradient fw-semibold">{{__('brand.why_choose_us')}}</span> </span>
+                                    <h2 class="text-2xl text-white lg:text-4xl section-heading__title">{{__('brand.why_choose_us_title')}}</h2>
                                     <p class="text-base text-justify text-gray-200 section-heading__desc fw-light">
-                                        Choisissez AP MANAGEMENT INTERNATIONAL INC pour notre expertise complète en gestion de projets, vente de maisons, et
-                                        approbation municipale. Nous offrons une planification stratégique sur mesure et optimisons chaque aspect de vos
-                                        transactions résidentielles. Avec notre approche intégrée, nous réduisons les risques et maximisons la rentabilité
-                                        de vos projets immobiliers.
+                                       {{__('brand.why_choose_us_description')}}
                                     </p>
                                     <div class="choose-us__button">
                                         <a href="blog-details.html" class="text-white btn btn-outline-lightInDark fw-normal">lire plus
@@ -276,9 +268,9 @@
                     <div class="text-center section-heading">
                      <div class="section-heading__inner">
                         <span class="section-heading__subtitle">
-                            <span class="text-gradient fw-semibold">Nos Dernières Offres</span>
+                            <span class="text-gradient fw-semibold">{{__('brand.last_offer')}}</span>
                         </span>
-                        <h2 class="text-2xl text-4xl section-heading__title">Vivez Votre Meilleure Vie dans Votre Nouvelle Maison</h2>
+                        <h2 class="text-2xl text-4xl section-heading__title">{{__('brand.best_life')}}</h2>
                     </div>
                     </div>
                     <div class="property-five-slider arrow-style-two">
@@ -298,8 +290,8 @@
             <section class="px-6 py-2 bg-white gallery-section">
                 <div class="container container-two">
                     <div class="section-heading">
-                        <span class="bg-transparent section-heading__subtitle"> <span class="text-gradient fw-semibold">Notre Galerie</span> </span>
-                        <h2 class="text-2xl section-heading__title lg:text-4xl">Déverrouillez la porte de votre nouvelle maison avec nous.</h2>
+                        <span class="bg-transparent section-heading__subtitle"> <span class="text-gradient fw-semibold">{{__('brand.our_project')}}</span> </span>
+                        <h2 class="text-2xl section-heading__title lg:text-4xl">{{__('brand.our_project_title')}}</h2>
                     </div>
                     <div class="grid grid-cols-12 gap-4">
                         <div class="col-span-5 lg:col-span-4 ">

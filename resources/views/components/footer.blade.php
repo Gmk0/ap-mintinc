@@ -2,7 +2,7 @@
     <div class="w-full container-two">
         <div class="gap-3 flx-between">
             <div class="footer-top__left">
-                <span class="icon"><img src="/assets/images/icons/envelop-icon.svg" alt=""></span>
+                <span class="hidden icon"><img src="/assets/images/icons/envelop-icon.svg" alt=""></span>
                 <h2 class="mb-0 text-white text">Subscribe to My newsletter</h2>
             </div>
             <form action="#" class="flex items-center gap-3 subscribe-form">
@@ -16,14 +16,14 @@
             </form>
         </div>
 
-        <div class="grid grid-cols-12 gap-5 py-6 lg:py-0">
+        <div class="grid grid-cols-12 gap-5 py-6">
             <div class="col-span-6 lg:col-span-5">
                 <div class="footer-item">
                     <div class="footer-item__logo">
                         <a href="index.html"> <img src="/images/logo.png" alt=""></a>
                     </div>
                 <p class="footer-item__desc max-w-unset">
-                    AP MANAGEMENT INTERNATIONAL INC : experts en vente de maisons, gestion de projets, et approbation municipale.
+                  {{__('brand.footer_desc')}}
                 </p>
                     <ul class="gap-2 mt-4 social-icon-list style-two flx-align">
                         <li class="social-icon-list__item">
@@ -91,6 +91,35 @@
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Contact Us</a>
             </div>
+            <div x-data="{ open: false }" class="relative inline-block text-left">
+                <button @click="open = !open" type="button"
+                    class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Language
+                    <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                        aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 3.414l3.293 3.879a1 1 0 001.414-1.414l-4-4a1 1 0 00-1.414 0l-4 4a1 1 0 000 1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            
+                <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
+                    x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95"
+                    class="absolute right-0 w-56 mb-2 origin-bottom-right bg-white rounded-md shadow-lg bottom-full ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                        <a href="?lang=en" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            role="menuitem">English</a>
+                        <a href="?lang=fr" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            role="menuitem">Français</a>
+                        <a href="?lang=pt" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            role="menuitem">Português</a>
+                    </div>
+                </div>
+            </div>
+            
+           
         </div>
     </div>
 </div>
