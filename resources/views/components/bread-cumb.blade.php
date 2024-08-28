@@ -10,7 +10,7 @@
                 <div class="breadcrumb__wrapper">
                     <h2 class="breadcrumb__title">{{$title}}</h2>
                     <ul class="breadcrumb__list">
-                        <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link"> <i
+                        <li class="breadcrumb__item"><a href="{{route('home')}}" class="breadcrumb__link"> <i
                                     class="las la-home"></i> Accueil</a> </li>
                         <li class="breadcrumb__item"><i class="fas fa-angle-right"></i></li>
                         <li class="breadcrumb__item"> <span class="breadcrumb__item-text"> {{$title}} </span> </li>
