@@ -6,7 +6,12 @@ use Livewire\Volt\Volt;
 
 
 
-
+Route::get('change-language/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'fr', 'pt'])) { // Liste des langues supportées
+        session(['locale' => $locale]); // Stocke la langue dans la session
+    }
+    return redirect()->back(); // Redirige l'utilisateur à la page précédente
+})->name('change.language');
 
 
 Volt::route('/about', 'about')->name('about');
