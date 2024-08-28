@@ -11,8 +11,18 @@ Route::get('/home2', function () {
 
 
 
-Volt::route('/a-propos-de-nous', 'about')->name('about');
+Volt::route('/about', 'about')->name('about');
 Volt::route('/contact', 'contact')->name('contact');
+
+Volt::route('/projects/details', 'projects.detailproject')->name('project.detail');
+
+Volt::route('/projects', 'project')->name('projet');
+
+Volt::route('/property/details', 'property.detailproperty')->name('property.detailproperty');
+
+Volt::route('/property', 'property.allproperty')->name('property.allproperty');
+
+
 
 
 Route::get('/', \App\Livewire\Home\Landing::class)->name('home');

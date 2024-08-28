@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="/assets/images/logo/favicon.png">
 
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
         <!-- Fontawesome -->
         <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
         <!-- Magnific popup css -->
@@ -23,6 +23,8 @@
         <link rel="stylesheet" href="/assets/css/jquery-ui.css">
         <!-- Main css -->
         <link rel="stylesheet" href="/assets/css/main.css">
+
+        @vite(['resources/css/app.css','resources/js/app.js'])
 
         @livewireStyles
 

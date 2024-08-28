@@ -7,28 +7,12 @@ title('contacts')
 
 <div>
 <!-- ==================== Breadcrumb Start Here ==================== -->
-<section class="breadcrumb padding-y-120">
-    <img src="assets/images/thumbs/breadcrumb-img.png" alt="" class="breadcrumb__img">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="breadcrumb__wrapper">
-                    <h2 class="breadcrumb__title"> Contact Us</h2>
-                    <ul class="breadcrumb__list">
-                        <li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link"> <i
-                                    class="las la-home"></i> Home</a> </li>
-                        <li class="breadcrumb__item"><i class="fas fa-angle-right"></i></li>
-                        <li class="breadcrumb__item"> <span class="breadcrumb__item-text"> Contact Us </span> </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+<x-bread-cumb  title="Contact" />
 <!-- ==================== Breadcrumb End Here ==================== -->
 
 <!-- ============================= Contact Top Section Start ======================= -->
-<section class="contact-top padding-y-120">
+<section class="px-12 py-32 contact-top">
     <div class="container container-two">
         <div class="section-heading">
             <span class="bg-gray-100 section-heading__subtitle">
@@ -36,37 +20,37 @@ title('contacts')
             </span>
             <h2 class="section-heading__title">Contact Us!</h2>
         </div>
-        <div class="row gy-4">
-            <div class="col-lg-4 col-sm-6">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-6 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-paper-plane"></i></span>
                     <h5 class="contact-card__title">Email</h5>
                     <p class="contact-card__text font-18">
-                        <a href="mailto:" class="link">michelle.rivera@example.com</a>
+                        <a href="mailto:" class="link">{{__('brand.email_info')}}</a>
                     </p>
                     <p class="contact-card__text font-18">
-                        <a href="mailto:" class="link">michelle.rivera@example.com</a>
+                        <a href="mailto:" class="link">{{__('brand.email_info')}}</a>
                     </p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-span-6 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></span>
                     <h5 class="contact-card__title">Location</h5>
                     <p class="contact-card__text font-18">
-                        8502 Preston Rd. Inglewood, Maine 98380
+                        {{__('brand.address')}}
                     </p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-span-6 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-phone"></i></span>
                     <h5 class="contact-card__title">Contacts </h5>
                     <p class="contact-card__text font-18">
-                        <a href="mailto:" class="link"> (270) 555-0117</a>
+                        <a href="mailto:" class="link"> {{__('brand.numero')}}</a>
                     </p>
                     <p class="contact-card__text font-18">
-                        <a href="mailto:" class="link"> (704) 555-0127 </a>
+                        <a href="mailto:" class="link"> {{__('brand.numero')}}</a>
                     </p>
                 </div>
             </div>
@@ -89,29 +73,29 @@ title('contacts')
                 <span class="bg-gray-100 section-heading__subtitle">
                     <span class="text-gradient fw-semibold">Contact us</span>
                 </span>
-                <h2 class="section-heading__title">Do you have any question? </h2>
+                <h2 class="section-heading__title">Avez vous de question? </h2>
                 <p class="section-heading__desc">For your car we will do everything advice, repairs and maintenance. We
                     are the some preferred choice by many car owners because</p>
             </div>
             <form action="#" class="contact-form__form">
-                <div class="row gy-4">
-                    <div class="col-sm-6 col-xs-6">
-                        <input type="text" class="common-input" placeholder="Your Name">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-6 col-xs-6">
+                        <input type="text" class="common-input" placeholder="Votre Nom">
                     </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <input type="email" class="common-input" placeholder="Your E-mail">
+                    <div class="col-span-6 col-xs-6">
+                        <input type="email" class="common-input" placeholder="Votre E-mail">
                     </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <input type="tel" class="common-input" placeholder="Phone Number">
+                    <div class="col-span-6 col-xs-6">
+                        <input type="tel" class="common-input" placeholder="Numero de telephone">
                     </div>
-                    <div class="col-sm-6 col-xs-6">
-                        <input type="text" class="common-input" placeholder="Subject">
+                    <div class="col-span-6 col-xs-6">
+                        <input type="text" class="common-input" placeholder="Sujet">
                     </div>
-                    <div class="col-12">
-                        <textarea class="common-input" placeholder="Your Message"></textarea>
+                    <div class="col-span-12">
+                        <textarea class="common-input" placeholder="Votre Message"></textarea>
                     </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-main w-100">Submit Now</button>
+                    <div class="flex items-center justify-center col-span-12">
+                        <button type="submit" class="btn btn-main w-100">Envoyer</button>
                     </div>
                 </div>
             </form>
@@ -120,7 +104,7 @@ title('contacts')
 </section>
 
 <!-- ============================= CTA section Start ===================== -->
-<section class="cta padding-b-120">
+<section class="hidden cta d-none padding-b-120">
     <div class="container container-two">
         <div class="gap-2 cta-box flx-between">
             <div class="cta-content">

@@ -2629,6 +2629,7 @@ input[type=number] {
     margin-bottom: clamp(2.5rem, 0.066rem + 5.071vw, 4.5rem);
     max-width: 630px;
     margin-left: auto;
+    font-size: 64px;
     margin-right: auto;
 }
 
@@ -2805,7 +2806,7 @@ input[type=number] {
     font-weight: 500;
     font-size: 1rem;
     width: 100%;
-    padding: 38px 0;
+    padding: 25px 0;
     width: 100%;
 }
 

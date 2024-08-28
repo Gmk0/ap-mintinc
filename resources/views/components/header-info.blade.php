@@ -1,15 +1,15 @@
 
-<div class="header-top bg--gradient">
-    <div class="container container-two">
+<div class=" header-top bg--gradient">
+    <div class="w-full px-4 ">
         <div class="gap-2 flx-between justify-content-sm-between justify-content-center">
             <div class="header-info flx-align">
                 <div class="text-white header-info__item flx-align">
                     <span class="header-info__icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <span class="text-white header-info__text fw-light">Immeuble Sozacom 5 em, Kinshasa/Gombe</span>
+                    <span class="text-white header-info__text fw-light">{{__('brand.address')}}</span>
                 </div>
                 <div class="text-white header-info__item flx-align">
                     <span class="header-info__icon"><i class="fas fa-envelope"></i></span>
-                    <a href="mailto:" class="text-white header-info__text fw-light">info@gapmintinc.com</a>
+                    <a href="mailto:" class="text-white header-info__text fw-light">{{__('brand.email_info')}}</a>
                 </div>
             </div>
             <ul class="gap-2 social-icon-list flx-align">
