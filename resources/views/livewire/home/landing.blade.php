@@ -10,7 +10,7 @@
                                     <h1 class="banner-content__title ">{{__('brand.landing_title')}}</h1>
                                     <p class="banner-content__desc font-18">{{__('brand.landing_description')}}</p>
                                     <div class="banner-content__button">
-                                        <a href="#" class="btn btn-main fw-normal"> {{__('brand.more')}}
+                                        <a href="{{route('about')}}" class="btn btn-main fw-normal"> {{__('brand.more')}}
                                             <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span>
                                         </a>
                                     </div>
@@ -81,7 +81,7 @@
 
                                 <p class="text-gray-700 section-heading__desc">{{__('brand.about_desc_f')}}</p>
 
-                                <div class="mt-4">
+                                <div class="hidden mt-4">
                                     <a href="#" class="font-semibold text-gray-900 simple-btn">
                                         {{__('brand.see_more')}}
                                         <span class="icon-right text-gradient"><i class="fas fa-arrow-right"></i></span>
@@ -249,7 +249,7 @@
                                        {{__('brand.why_choose_us_description')}}
                                     </p>
                                     <div class="choose-us__button">
-                                        <a href="blog-details.html" class="text-white btn btn-outline-lightInDark fw-normal">lire plus
+                                        <a href="{{route('contact')}}" class="text-white btn btn-outline-lightInDark fw-normal">{{__('brand.contat_us')}}
                                             <span class="icon-right icon text-gradient">
                                                 <i class="fas fa-arrow-right"></i>
                                             </span>
@@ -293,37 +293,62 @@
                         <span class="bg-transparent section-heading__subtitle"> <span class="text-gradient fw-semibold">{{__('brand.our_project')}}</span> </span>
                         <h2 class="text-2xl section-heading__title lg:text-4xl">{{__('brand.our_project_title')}}</h2>
                     </div>
+                    <div class="flex justify-end mb-4">
+                        <a href="{{route('projet')}}" class="btn btn-main fw-normal"> {{__('brand.more')}}
+                            <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span>
+                        </a>
+
+                    </div>
                     <div class="grid grid-cols-12 gap-4">
                         <div class="col-span-5 lg:col-span-4 ">
                             <div class="gallery-thumb">
-                                <img src="/images/house/1.png" alt=""  class="object-cover w-full h-auto">
-                                <a href="/images/house/1.png" class="gallery-thumb__link gallery-popup">
-                                    <i class="fas fa-expand-alt"></i>
-                                </a>
+
+                                <div class="project-page-thumb">
+                                    <img src="/images/house/construction.jpg" alt="" class="cover-img">
+                                    <div class="project-page-content">
+                                        <h6 class="project-page-content__title">
+                                            <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets Interior Design</a>
+                                        </h6>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-span-7 lg:col-span-8 ">
                             <div class="gallery-thumb">
-                                <img src="/images/house/4.png" alt="" width="850" height="467" class="object-cover w-full h-auto">
-                                <a href="/images/house/4.png" class="gallery-thumb__link gallery-popup">
-                                    <i class="fas fa-expand-alt"></i>
-                                </a>
+                               
+                                <div class="project-page-thumb">
+                                    <img src="/images/house/4.png" alt="" class="cover-img">
+                                    <div class="project-page-content">
+                                        <h6 class="project-page-content__title">
+                                            <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets Interior Design</a>
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-span-7 lg:col-span-8 col-xs-6">
                             <div class="gallery-thumb">
-                                <img src="/images/house/5.png" alt="" class="cover-img">
-                                <a href="/images/house/5 .png" class="gallery-thumb__link gallery-popup">
-                                    <i class="fas fa-expand-alt"></i>
-                                </a>
+                               <div class="project-page-thumb">
+                                    <img src="/images/house/5.png" alt="" class="cover-img">
+                                    <div class="project-page-content">
+                                        <h6 class="project-page-content__title">
+                                            <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets Interior Design</a>
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-span-5 lg:col-span-4 ">
                             <div class="gallery-thumb">
-                                <img src="/images/house/4.png" alt="" class="cover-img">
-                                <a href="/images/house/4.png" class="gallery-thumb__link gallery-popup">
-                                    <i class="fas fa-expand-alt"></i>
-                                </a>
+                               <div class="project-page-thumb">
+                                    <img src="/images/house/terrain.jpg" alt="" class="cover-img">
+                                    <div class="project-page-content">
+                                        <h6 class="project-page-content__title">
+                                            <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets Interior Design</a>
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

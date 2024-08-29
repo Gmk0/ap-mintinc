@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('expertises', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('icon')->nullable();
-            $table->string('description')->nullable();
+            $table->json('title');
+            $table->json('icon')->nullable();
+            $table->json('description')->nullable();
+            $table->json('slug'); 
+            $table->json('content')->nullable();
             $table->enum('status',['enabled','disabled'])->default('enabled');
 
 

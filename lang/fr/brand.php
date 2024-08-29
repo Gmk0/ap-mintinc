@@ -19,6 +19,8 @@ return [
     "contact"=>"contact",
     'property'=>'proprietes',
     'add_property'=> 'Vendre une  Proprietes',
+    'contat_us'=>'Nous contacter',
+    'about_proffesional'=> 'Nos expertes en la matiere',
     
 
     'brandTitle' => 'These credentials do not match our records.',

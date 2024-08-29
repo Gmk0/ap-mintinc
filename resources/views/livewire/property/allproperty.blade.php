@@ -103,12 +103,12 @@ new class extends Component {
                 <div class="property-item style-two">
                     <div class="property-item__thumb">
                         <a href="property-details.html" class="link">
-                            <img src="assets/images/thumbs/property-7.png" alt="" class="cover-img">
+                            <img src="images/house/1.png" alt="" class="cover-img">
                         </a>
                     </div>
                     <div class="property-item__content">
                         <h6 class="property-item__title">
-                            <a href="property-details.html" class="link"> Turning Dreams into Addresses Home State </a>
+                            <a href="{{route('property.detailproperty')}}" class="link"> Maison a louer </a>
                         </h6>
                         <ul class="amenities-list flx-align">
                             <li class="amenities-list__item flx-align">
@@ -121,13 +121,13 @@ new class extends Component {
                             </li>
                         </ul>
                         <h6 class="property-item__price"> $456.00
-                            <span class="day">/per day</span>
+                            <span class="day">/par mois</span>
                         </h6>
                         <p class="gap-2 property-item__location d-flex">
                             <span class="icon text-gradient"> <i class="fas fa-map-marker-alt"></i></span>
-                            66 Broklyant, New York America
+                            26 Oshwe, Kasa vubu kinshasa
                         </p>
-                        <a href="property-details.html" class="simple-btn text-gradient fw-semibold font-14">Book Now
+                        <a href="{{route('property.detailproperty')}}" class="simple-btn text-gradient fw-semibold font-14">{{__('brand.see_more')}}
                             <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
                     </div>
                 </div>

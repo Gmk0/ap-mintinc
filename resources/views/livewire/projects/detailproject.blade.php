@@ -65,7 +65,7 @@ new class extends Component {
                             </li>
                             <li class="project-sidebar__item">
                                 <span class="project-sidebar__text font-12">Date</span>
-                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">November 19, 2022</h6>
+                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">November 20, 2024</h6>
                             </li>
                         </ul>
                         <ul class="mt-4 social-share-list style-two lg:mt-5">

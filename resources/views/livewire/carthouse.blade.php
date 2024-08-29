@@ -32,7 +32,7 @@ state('images')
                         <span class="text text-heading fw-500">3 Baths</span>
                     </li>
                 </ul>
-                <a href="#" class="simple-btn text-heading">Book Now <span class="icon-right text-gradient">
+                <a href="{{route('property.detailproperty')}}" class="simple-btn text-heading">{{__('brand.see_more')}} <span class="icon-right text-gradient">
                         <i class="fas fa-arrow-right"></i> </span>
                 </a>
             </div>

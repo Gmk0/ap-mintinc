@@ -24,14 +24,12 @@ Volt::route('/projects', 'project')->name('projet');
 Volt::route('/property/details', 'property.detailproperty')->name('property.detailproperty');
 
 Volt::route('/sell-property', 'property.sellproperty')->name('property.sellproperty');
-
-
 Volt::route('/property', 'property.allproperty')->name('property.allproperty');
+Volt::route('/', 'home')->name('home');
+
+Volt::route('/expertise/{slug}','expertise.oneexpertise')->name('expertise.oneexpertise');
 
 
-
-
-Route::get('/', \App\Livewire\Home\Landing::class)->name('home');
 
 
 

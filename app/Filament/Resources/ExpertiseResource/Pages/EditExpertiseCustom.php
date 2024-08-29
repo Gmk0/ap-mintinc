@@ -4,7 +4,7 @@ namespace App\Filament\Resources\ExpertiseResource\Pages;
 
 use App\Filament\Resources\ExpertiseResource;
 use App\Models\Expertise;
-use Filament\Forms\Components\{Grid, Repeater, Select, TextInput, MarkdownEditor};
+use Filament\Forms\Components\{Grid, Repeater, Select, TextInput, Textarea, MarkdownEditor};
 use Filament\Forms\Form;
 use Filament\Resources\Pages\Page;
 use Filament\Forms\Components\Actions\Action;
@@ -59,8 +59,9 @@ class EditExpertiseCustom extends Page
                             ->label('Title')
                             ->required()
                             ->columnSpan(2),
+            Textarea::make('description')->columnSpanFull(),
 
-                        MarkdownEditor::make('description')->columnSpanFull(),
+                        MarkdownEditor::make('content')->columnSpanFull(),
                     ])
                     ->collapsible()
                     
@@ -122,6 +123,7 @@ class EditExpertiseCustom extends Page
             'icon' => $data['icon'],
             'status' => $data['status'],
             'title' => $data['translations'][0]['title'],
+            'content' => $data['translations'][0]['content'],
             'description' => $data['translations'][0]['description'],
         ]);
 
@@ -133,8 +135,11 @@ class EditExpertiseCustom extends Page
 
           
 
-            $this->record->setTranslation('title', $translationData['locale'], $translationData['title']);
+                 $this->record->setTranslation('title', $translationData['locale'], $translationData['title']);
                 $this->record->setTranslation('description', $translationData['locale'], $translationData['description']);
+                $this->record->setTranslation('content', $translationData['locale'], $translationData['content']);
+
+
 
            
         }

@@ -50,10 +50,10 @@
                <div class="footer-item lg:mr-5">
             <h6 class="footer-item__title">Nos Services</h6>
             <ul class="footer-menu">
-                <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Planification Stratégique</a></li>
-                <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Gestion de Projets</a></li>
-                <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Vente de Maisons</a></li>
-                <li class="footer-menu__item"><a href="property.html" class="footer-menu__link">Approbation Municipale</a></li>
+                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Planification Stratégique</a></li>
+                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Gestion de Projets</a></li>
+                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Vente de Maisons</a></li>
+                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Approbation Municipale</a></li>
             </ul>
 </div>
 
@@ -72,7 +72,7 @@
                         </div>
                         <div class="flex items-start footer-contact__item font-18">
                             <span class="footer-contact__icon"><i class="fas fa-phone"></i></span>
-                            <a href="tel:" class="footer-contact__link">(+243) 0844720350</a>
+                            <a href="tel:" class="footer-contact__link">{{__('brand.numero')}}</a>
                         </div>
                     </div>
                 </div>
@@ -87,39 +87,42 @@
         <div class="gap-3 bottom-footer__inner flx-between">
             <p class="bottom-footer__text"> &copy; Ap 2024 | All Rights Reserved.</p>
             <div class="footer-links">
+                <div x-data="{ open: false, selectedLanguage: '{{ app()->getLocale() }}' }" class="relative inline-block text-left">
+                    <button @click="open = !open" type="button"
+                        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-100 bg-gray-700 border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <span
+                            x-text="selectedLanguage === 'en' ? 'English' : selectedLanguage === 'fr' ? 'Français' : 'Português'"></span>
+                        <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 3.414l3.293 3.879a1 1 0 001.414-1.414l-4-4a1 1 0 00-1.414 0l-4 4a1 1 0 000 1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                
+                    <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
+                        x-transition:leave-end="transform opacity-0 scale-95"
+                        class="absolute right-0 z-10 w-56 mb-2 origin-bottom-right bg-white rounded-md shadow-lg bottom-full ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                            <a href="#" @click.prevent="changeLanguage('en')"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">English</a>
+                            <a href="#" @click.prevent="changeLanguage('fr')"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Français</a>
+                            <a href="#" @click.prevent="changeLanguage('pt')"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Português</a>
+                        </div>
+                    </div>
+                </div>
                 <a href="#" class="footer-link">Terms & Condition</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Contact Us</a>
+
+                
             </div>
             
-            <div x-data="{ open: false, selectedLanguage: '{{ app()->getLocale() }}' }" class="relative inline-block text-left">
-                <button @click="open = !open" type="button"
-                    class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <span
-                        x-text="selectedLanguage === 'en' ? 'English' : selectedLanguage === 'fr' ? 'Français' : 'Português'"></span>
-                    <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                        aria-hidden="true">
-                        <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 3.414l3.293 3.879a1 1 0 001.414-1.414l-4-4a1 1 0 00-1.414 0l-4 4a1 1 0 000 1.414z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-            
-                <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
-                    x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
-                    x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
-                    x-transition:leave-end="transform opacity-0 scale-95"
-                    class="absolute right-0 z-10 w-56 mb-2 origin-bottom-right bg-white rounded-md shadow-lg bottom-full ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                        <a href="#" @click.prevent="changeLanguage('en')"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">English</a>
-                        <a href="#" @click.prevent="changeLanguage('fr')"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Français</a>
-                        <a href="#" @click.prevent="changeLanguage('pt')"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Português</a>
-                    </div>
-                </div>
-            </div>
+         
             
             <script>
                 function changeLanguage(locale) {

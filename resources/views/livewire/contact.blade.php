@@ -12,7 +12,7 @@ title('contacts')
 <!-- ==================== Breadcrumb End Here ==================== -->
 
 <!-- ============================= Contact Top Section Start ======================= -->
-<section class="px-12 py-32 contact-top">
+<section class="px-12 py-8 contact-top">
     <div class="container container-two">
         <div class="section-heading">
             <span class="bg-gray-100 section-heading__subtitle">

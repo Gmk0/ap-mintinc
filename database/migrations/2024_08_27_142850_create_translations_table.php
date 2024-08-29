@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('translations', function (Blueprint $table) {
+        Schema::create('translations2', function (Blueprint $table) {
             $table->id();
             $table->string('model_type'); // Le type de modèle, par exemple, "Post"
             $table->unsignedBigInteger('model_id'); // L'identifiant du modèle, par exemple, "Post" ID
