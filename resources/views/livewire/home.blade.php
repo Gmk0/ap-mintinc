@@ -134,7 +134,105 @@ title('Home');
     <!-- ====================== property Type Five Start =============================== -->
 
 
-    <livewire:home.allexpertise />
+    <section class="px-6 pt-6 pb-16 property-type-three">
+        <div class="container mx-auto">
+            <div class="mb-8 text-center section-heading">
+                <span class="section-heading__subtitle">
+                    <span class="font-semibold text-gradient">{{__('brand.services')}}</span>
+                </span>
+                <h2 class="text-2xl font-bold section-heading__title">{{__('brand.our_expertise')}}</h2>
+            </div>
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon1.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Recherches Des propriétés</h6>
+                        <p class="text-base property-type-three-item__desc">Trouvons ensemble la propriété idéale pour
+                            vous,
+                            qu'il s'agisse d'achat, de vente ou de location.</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon2.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Prime Investments</h6>
+                        <p class="text-base property-type-three-item__desc">Real estate is a lucrative ind involves the
+                            buying selling and reproperties. It encompa</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon3.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Valuation du Potentiel</h6>
+                        <p class="text-base property-type-three-item__desc">Analyse approfondie pour maximiser la valeur
+                            de
+                            chaque propriété</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon4.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Plan d'Action Stratégique</h6>
+                        <p class="text-base property-type-three-item__desc">Nous élaborons des plans d'action sur mesure
+                            pour optimiser chaque projet immobilier.</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon5.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Approbation Municipale</h6>
+                        <p class="text-base property-type-three-item__desc">Nous facilitons l'obtention des
+                            autorisations
+                            nécessaires pour vos projets immobiliers</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-start property-type-three-item">
+                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
+                        <img src="assets/images/icons/ppty-type-icon6.svg" alt="">
+                    </span>
+                    <div class="property-type-three-item__content">
+                        <h6 class="text-lg font-semibold property-type-three-item__title">Gestion de Projet</h6>
+                        <p class="text-base property-type-three-item__desc">Nous supervisons chaque étape du projet pour
+                            assurer son succès.</p>
+                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
+                            More About
+                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- ====================== property Type Five End =============================== -->
     <!-- ===================== Choose Us Start =========================== -->
     <section class="px-6 bg-gray-900 choose-us padding-y-120">
