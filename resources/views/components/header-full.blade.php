@@ -3,7 +3,7 @@
                 <nav class="header-inner flx-between">
                     <!-- Logo Start -->
                     <div class="logo">
-                        <a href="index.html" class="link">
+                        <a href="{{route('home')}}" class="link">
                             <img src="/images/logo.png" width="80" height="80" alt="Logo">
                         </a>
                     </div>
