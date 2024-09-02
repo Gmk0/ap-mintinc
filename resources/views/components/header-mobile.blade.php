@@ -9,24 +9,24 @@
             <ul class="nav-menu flx-align nav-menu--mobile">
                 <li class="nav-menu__item ">
                     <a href="{{route('home')}}" class="nav-menu__link">Accueil</a>
-                    
+
                 </li>
                 <li class="nav-menu__item ">
                     <a href="{{route('property.allproperty')}}" class="nav-menu__link">{{__('brand.property')}}</a>
-                    
+
                 </li>
                 <li class="nav-menu__item has-submenu">
                     <a href="javascript:void(0)" class="nav-menu__link">{{__('brand.services')}}</a>
                     <ul class="nav-submenu">
                         <li class="nav-submenu__item">
-                            <a href="{{route('projet')}}" class="nav-submenu__link"> {{__('brand.services')}} </a>
+                            <a href="{{route('project.allprojects')}}" class="nav-submenu__link"> {{__('brand.services')}} </a>
                         </li>
                         <li class="nav-submenu__item">
                             <a href="project-details.html" class="nav-submenu__link">Project Details</a>
                         </li>
                     </ul>
                 </li>
-               
+
                 <li class="nav-menu__item">
                     <a href="{{route('about')}}" class="nav-menu__link">{{__('brand.about_us')}}</a>
                 </li>

@@ -19,15 +19,15 @@
                             </li>
                             <li class="nav-menu__item ">
                                 <a href="{{route('property.allproperty')}}" class="nav-menu__link">{{__('brand.property')}}</a>
-                          
+
                             </li>
                             <li class="nav-menu__item has-submenu">
                                 <a href="javascript:void(0)" class="nav-menu__link">{{__('brand.services')}}</a>
                                 <ul class="nav-submenu">
                                     <li class="nav-submenu__item">
-                                        <a href="{{route('projet')}}" class="nav-submenu__link"> {{__('brand.Project')}} </a>
+                                        <a href="{{route('project.allprojects')}}" class="nav-submenu__link"> {{__('brand.Project')}} </a>
                                     </li>
-                                    
+
                                 </ul>
                             </li>
                             <li class="nav-menu__item">
@@ -44,7 +44,7 @@
                     <!-- Header Right start -->
                     <div class="header-right flx-align">
 
-                        
+
                         <a href="#"
                             class="flex items-center gap-2 text-gray-800 contact-number text-poppins fw-500">
                             <span class="icon text-gradient font-20"><i class="fas fa-phone"></i></span>

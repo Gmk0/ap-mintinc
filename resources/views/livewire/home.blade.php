@@ -1,8 +1,18 @@
 <?php
+use App\Models\Expertise;
 
-use function Livewire\Volt\{layout, state, title};
+use function Livewire\Volt\{layout, state,computed, title};
 
 title('Home');
+
+
+$expertises=computed(function(){
+
+    return Expertise::all();
+
+});
+
+
 ?>
 
 <div>
@@ -57,8 +67,8 @@ title('Home');
                         <div class="inline-flex items-center about-five__content">
                             <span class="about-five__icon"><i class="fas fa-users"></i></span>
                             <div class="about-five__texts">
-                                <h5 class="mb-0 text-white about-five__amount">25K+</h5>
-                                <span class="text-white about-five__text text-[18px]">Projets Réalisés</span>
+                                <h5 class="mb-0 text-white about-five__amount">10+</h5>
+                                <span class="text-white about-five__text text-[18px]">{{__('brand.project_realiser')}}</span>
                             </div>
                         </div>
                     </div>
@@ -104,135 +114,29 @@ title('Home');
     <!-- ======================= Service Slider Section Start ======================= -->
     <div class="overflow-hidden service-slider-section">
         <div class="flex items-center gap-4 service-slider">
+
+            @forelse ($this->expertises as $expert)
             <div class="flex items-center gap-3 service-slider__item">
                 <span class="service-slider__icon">
                     <img src="/assets/images/icons/service-slider-icon1.svg" alt="">
                 </span>
-                <h2 class="mb-0 font-semibold service-slider__text">Planification Stratégique</h2>
+                <h2 class="mb-0 font-semibold service-slider__text">{{$expert->title}}</h2>
             </div>
-            <div class="flex items-center gap-3 service-slider__item">
-                <span class="service-slider__icon">
-                    <img src="/assets/images/icons/service-slider-icon2.svg" alt="">
-                </span>
-                <h2 class="mb-0 font-semibold service-slider__text">Gestion de Projets</h2>
-            </div>
-            <div class="flex items-center gap-3 service-slider__item">
-                <span class="service-slider__icon">
-                    <img src="/assets/images/icons/service-slider-icon3.svg" alt="">
-                </span>
-                <h2 class="mb-0 font-semibold service-slider__text">Vente de Maisons</h2>
-            </div>
-            <div class="flex items-center gap-3 service-slider__item">
-                <span class="service-slider__icon">
-                    <img src="/assets/images/icons/service-slider-icon4.svg" alt="">
-                </span>
-                <h2 class="mb-0 font-semibold service-slider__text">Approbation Municipale</h2>
-            </div>
+
+            @empty
+
+            @endforelse
+
+
+
+
         </div>
     </div>
     <!-- ======================= Service Slider Section Ends ======================= -->
     <!-- ====================== property Type Five Start =============================== -->
 
 
-    <section class="px-6 pt-6 pb-16 property-type-three">
-        <div class="container mx-auto">
-            <div class="mb-8 text-center section-heading">
-                <span class="section-heading__subtitle">
-                    <span class="font-semibold text-gradient">{{__('brand.services')}}</span>
-                </span>
-                <h2 class="text-2xl font-bold section-heading__title">{{__('brand.our_expertise')}}</h2>
-            </div>
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon1.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Recherches Des propriétés</h6>
-                        <p class="text-base property-type-three-item__desc">Trouvons ensemble la propriété idéale pour
-                            vous,
-                            qu'il s'agisse d'achat, de vente ou de location.</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon2.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Prime Investments</h6>
-                        <p class="text-base property-type-three-item__desc">Real estate is a lucrative ind involves the
-                            buying selling and reproperties. It encompa</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon3.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Valuation du Potentiel</h6>
-                        <p class="text-base property-type-three-item__desc">Analyse approfondie pour maximiser la valeur
-                            de
-                            chaque propriété</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon4.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Plan d'Action Stratégique</h6>
-                        <p class="text-base property-type-three-item__desc">Nous élaborons des plans d'action sur mesure
-                            pour optimiser chaque projet immobilier.</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon5.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Approbation Municipale</h6>
-                        <p class="text-base property-type-three-item__desc">Nous facilitons l'obtention des
-                            autorisations
-                            nécessaires pour vos projets immobiliers</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="flex items-start property-type-three-item">
-                    <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                        <img src="assets/images/icons/ppty-type-icon6.svg" alt="">
-                    </span>
-                    <div class="property-type-three-item__content">
-                        <h6 class="text-lg font-semibold property-type-three-item__title">Gestion de Projet</h6>
-                        <p class="text-base property-type-three-item__desc">Nous supervisons chaque étape du projet pour
-                            assurer son succès.</p>
-                        <a href="property.html" class="inline-flex items-center font-semibold simple-btn text-heading">
-                            More About
-                            <span class="ml-2 icon-right"><i class="fas fa-arrow-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <livewire:home.allexpertise>
     <!-- ====================== property Type Five End =============================== -->
     <!-- ===================== Choose Us Start =========================== -->
     <section class="px-6 bg-gray-900 choose-us padding-y-120">
@@ -284,7 +188,7 @@ title('Home');
                     <span class="section-heading__subtitle">
                         <span class="text-gradient fw-semibold">{{__('brand.last_offer')}}</span>
                     </span>
-                    <h2 class="text-2xl text-4xl section-heading__title">{{__('brand.best_life')}}</h2>
+                    <h2 class="text-2xl lg:text-4xl section-heading__title">{{__('brand.best_life')}}</h2>
                 </div>
             </div>
             <div class="property-five-slider arrow-style-two">
@@ -301,78 +205,8 @@ title('Home');
     </section>
     <!-- ======================= Property Section End ===================== -->
     <!-- ========================== Gallery Section Start ============================== -->
-    <section class="px-6 py-2 bg-white gallery-section">
-        <div class="container container-two">
-            <div class="section-heading">
-                <span class="bg-transparent section-heading__subtitle"> <span
-                        class="text-gradient fw-semibold">{{__('brand.our_project')}}</span> </span>
-                <h2 class="text-2xl section-heading__title lg:text-4xl">{{__('brand.our_project_title')}}</h2>
-            </div>
-            <div class="flex justify-end mb-4">
-                <a href="{{route('projet')}}" class="btn btn-main fw-normal"> {{__('brand.more')}}
-                    <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span>
-                </a>
 
-            </div>
-            <div class="grid grid-cols-12 gap-4">
-                <div class="col-span-5 lg:col-span-4 ">
-                    <div class="gallery-thumb">
-
-                        <div class="project-page-thumb">
-                            <img src="/images/house/construction.jpg" alt="" class="cover-img">
-                            <div class="project-page-content">
-                                <h6 class="project-page-content__title">
-                                    <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                        Interior Design</a>
-                                </h6>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-span-7 lg:col-span-8 ">
-                    <div class="gallery-thumb">
-
-                        <div class="project-page-thumb">
-                            <img src="/images/house/4.png" alt="" class="cover-img">
-                            <div class="project-page-content">
-                                <h6 class="project-page-content__title">
-                                    <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                        Interior Design</a>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-7 lg:col-span-8 col-xs-6">
-                    <div class="gallery-thumb">
-                        <div class="project-page-thumb">
-                            <img src="/images/house/5.png" alt="" class="cover-img">
-                            <div class="project-page-content">
-                                <h6 class="project-page-content__title">
-                                    <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                        Interior Design</a>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-5 lg:col-span-4 ">
-                    <div class="gallery-thumb">
-                        <div class="project-page-thumb">
-                            <img src="/images/house/terrain.jpg" alt="" class="cover-img">
-                            <div class="project-page-content">
-                                <h6 class="project-page-content__title">
-                                    <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                        Interior Design</a>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<livewire:projects.projecthome />
     <!-- ========================== Gallery Section End ============================== -->
     <!-- ======================= Counter Section Start ======================= -->
     <section class="px-6 bg-white counter-six">

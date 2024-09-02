@@ -4,10 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class ConstructionProject extends Model
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Spatie\Sluggable\{HasSlug, HasTranslatableSlug};
+use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+class ConstructionProject extends Model implements HasMedia
 {
     use HasFactory;
+    use InteractsWithMedia;
+
 
     protected $fillable = [
         'title',
@@ -15,14 +22,36 @@ class ConstructionProject extends Model
         'start_date',
         'end_date',
         'localisation',
+        'Category',
+        'client',
+        'cost',
         'status',
         'property_id',
+        'at_view',
     ];
+
+    use HasTranslations, HasTranslatableSlug;
+
+    public $translatable = ['title', 'description', 'Category', 'slug', 'localisation','slug'];
 
     // The attributes that should be cast to native types.
     protected $casts = [
         'start_date' => 'date', // Cast start_date to a Carbon date instance
         'end_date' => 'date', // Cast end_date to a Carbon date instance
-        'status' => 'string', // Cast status to a string (could use enum if you have specific values)
+        'status' => 'string',
+        'at_view' =>'boolean'// Cast status to a string (could use enum if you have specific values)
     ];
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions(): SlugOptions
+    {
+        return SlugOptions::createWithLocales(['fr', 'en'])
+            ->generateSlugsFrom(function ($model, $locale) {
+                return "{$locale} {$model->title}";
+            })
+            ->saveSlugsTo('slug');
+    }
+
 }

@@ -10,6 +10,17 @@ return [
     'add_property' => 'Sell a Property',
     'contat_us' => 'Contact us',
     'about_proffesional' => 'Our Experts',
+    'your_name'=> 'Your Name',
+    'your_email'=> 'Your Email',
+    'your_phone'=> 'Your Phone',
+    "your_message"=> 'Your Message',
+    'send'=>'Send',
+    'project_realiser' => 'Project Realised',
+    'year_expertise'=>'Year Expertise',
+    'house_sold'=>'House sold',
+    "project_pending"=>'Project pending',
+
+
 
     'brandTitle' => 'These credentials do not match our records.',
     'email_info' => 'info@apmintinc.com',

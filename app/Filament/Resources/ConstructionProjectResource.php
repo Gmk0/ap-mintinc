@@ -12,9 +12,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\Concerns\Translatable;
+
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class ConstructionProjectResource extends Resource
 {
+    use Translatable;
     protected static ?string $model = ConstructionProject::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -27,15 +31,30 @@ class ConstructionProjectResource extends Resource
                     ->required(),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
+
+            Forms\Components\RichEditor::make('content')
+                ->columnSpanFull(),
+
+            SpatieMediaLibraryFileUpload::make('images')
+            ->collection('projets')
+             ->multiple()
+                ->responsiveImages()
+    ->reorderable()
+    ->columnSpanFull(),
+
+
                 Forms\Components\DatePicker::make('start_date'),
                 Forms\Components\DatePicker::make('end_date'),
                 Forms\Components\Textarea::make('localisation')
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('status')
+            Forms\Components\TextInput::make('client'),
+            Forms\Components\TextInput::make('category'),
+            Forms\Components\TextInput::make('const')->numeric(),
+                Forms\Components\Toggle::make('afficher')
                     ->required(),
                 Forms\Components\TextInput::make('property_id')
-                    ->required()
-                    ->numeric(),
+                ->label('relier une maison')
+                    ,
             ]);
     }
 

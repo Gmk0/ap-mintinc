@@ -23,6 +23,14 @@ return [
     'contat_us' => 'Contate-Nos',
     'about_proffesional' => 'Nossos Especialistas',
 
+    'your_name' => 'Your Name',
+    'your_email' => 'Your Email',
+    'your_phone' => 'Your Phone',
+    "your_message" => 'Your Message',
+
+    'send' => 'Envoyer',
+    'project_realiser' => 'Projet realiser',
+
     'brandTitle' => 'Essas credenciais não correspondem aos nossos registros.',
     'email_info' => 'info@apmintinc.com',
     'numero' => '+243 979173177',

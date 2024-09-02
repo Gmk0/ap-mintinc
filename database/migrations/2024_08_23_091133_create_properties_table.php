@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('title'); // Title of the property
-            $table->text('description'); // Description of the property
+            $table->json('title'); // Title of the property
+            $table->json('description');
+            $table->json('slug'); // Description of the property
             $table->decimal('price', 15, 2); // Price of the property
             $table->enum('type', ['house', 'apartment', 'land']); // Type of property
             $table->string('address'); // Address of the property
