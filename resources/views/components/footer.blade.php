@@ -3,7 +3,7 @@
         <div class="gap-3 flx-between">
             <div class="footer-top__left">
                 <span class="hidden icon"><img src="/assets/images/icons/envelop-icon.svg" alt=""></span>
-                <h2 class="mb-0 text-white text">Subscribe to My newsletter</h2>
+                <h2 class="mb-0 text-white text">{{__('brand.subscribe_our_letter')}}</h2>
             </div>
             <form action="#" class="flex items-center gap-3 subscribe-form">
                 <div class="position-relative w-100">
@@ -12,7 +12,7 @@
                     <span class="input-icon input-icon--left text-gradient font-20 line-height-1"><i
                             class="far fa-envelope"></i></span>
                 </div>
-                <button type="submit" class="flex-shrink-0 btn btn-main fw-normal">Subscribe</button>
+                <button type="submit" class="flex-shrink-0 btn btn-main fw-normal">{{__('brand.subscrire')}}</button>
             </form>
         </div>
 
@@ -46,16 +46,7 @@
 
                 </div>
             </div>
-            <div class="col-span-6 lg:col-span-4">
-               <div class="footer-item lg:mr-5">
-            <h6 class="footer-item__title">Nos Services</h6>
-            <ul class="footer-menu">
-                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Planification Stratégique</a></li>
-                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Gestion de Projets</a></li>
-                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Vente de Maisons</a></li>
-                <li class="footer-menu__item"><a href="#" class="footer-menu__link">Approbation Municipale</a></li>
-            </ul>
-</div>
+        @livewire("footer")
 
             </div>
             <div class="col-span-6 lg:col-span-3">
@@ -99,7 +90,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </button>
-                
+
                     <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
                         x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
@@ -119,11 +110,11 @@
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Contact Us</a>
 
-                
+
             </div>
-            
-         
-            
+
+
+
             <script>
                 function changeLanguage(locale) {
                     const form = document.createElement('form');
@@ -133,8 +124,8 @@
                     form.submit();
                 }
             </script>
-            
-           
+
+
         </div>
     </div>
 </div>

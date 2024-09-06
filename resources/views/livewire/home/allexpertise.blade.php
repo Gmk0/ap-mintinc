@@ -24,9 +24,9 @@ $expertises=computed(function(){
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
             @foreach ($this->expertises as $expertise)
-            <div class="flex items-start property-type-three-item">
+            <div class="flex items-center property-type-three-item">
                 <span class="flex-shrink-0 mr-4 property-type-three-item__icon">
-                    <img src="assets/images/icons/ppty-type-icon1.svg" alt="">
+                    <img src="{{$expertise->getFirstMediaUrl('icon')}}" alt="">
                 </span>
                 <div class="property-type-three-item__content">
                     <h6 class="text-lg font-semibold property-type-three-item__title">{{$expertise->title}}</h6>
@@ -37,10 +37,10 @@ $expertises=computed(function(){
                     </a>
                 </div>
             </div>
-                
+
             @endforeach
-               
-               
+
+
             </div>
         </div>
     </section>

@@ -21,13 +21,20 @@ Volt::route('/projects/{slug}', 'projects.detailproject')->name('project.detail'
 
 Volt::route('/projects', 'projects.allprojects')->name('project.allprojects');
 
-Volt::route('/property/details', 'property.detailproperty')->name('property.detailproperty');
+Volt::route('/properties/{slug}/details', 'propertys.detailproperty')->name('property.detailproperty');
 
-Volt::route('/sell-property', 'property.sellproperty')->name('property.sellproperty');
-Volt::route('/property', 'property.allproperty')->name('property.allproperty');
+
+
+//Volt::route('/properties/category/{slug}','property.category')->name('property.category');
+
+Volt::route('/sell-property', 'propertys.sellproperty')->name('property.sellproperty');
+//Volt::route('/properties', 'propertys.allproperty')->name('property.allproperty');
+
+Route::get('/properties/{category?}', \App\Livewire\Propertys\AllProperties::class)->name('property.allproperty');
 Volt::route('/', 'home')->name('home');
 
 Volt::route('/expertise/{slug}','expertise.oneexpertise')->name('expertise.oneexpertise');
+
 
 
 

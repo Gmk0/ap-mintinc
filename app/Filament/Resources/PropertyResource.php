@@ -13,7 +13,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
-
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Get;
 
 class PropertyResource extends Resource
 {
@@ -29,33 +30,49 @@ class PropertyResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required(),
                 Forms\Components\Textarea::make('description')
-                    ->required()
+
                     ->columnSpanFull(),
+            SpatieMediaLibraryFileUpload::make('images')
+            ->collection('properties')
+            ->multiple()
+            ->imageResizeMode('cover')
+
+            ->image()
+            ->imagePreviewHeight(100)
+            ->responsiveImages()
+            ->reorderable()
+            ->columnSpanFull(),
+            Forms\Components\TextInput::make('lien_video')->label('Lien de la video')
+
+                ->columnSpanFull()
+            ,
                 Forms\Components\TextInput::make('price')
                     ->required()
                     ->numeric()
                     ->prefix('$'),
-                Forms\Components\TextInput::make('type')
+            Forms\Components\Select::make('category_id')
+            ->relationship('category','name')
+
+            ->live(onBlur:true)
                     ->required(),
                 Forms\Components\TextInput::make('address')
-                    ->required(),
-                Forms\Components\TextInput::make('city')
-                    ->required(),
+                    ,
+
                 Forms\Components\TextInput::make('state')
-                    ->required(),
+                    ,
                 Forms\Components\TextInput::make('country')
-                    ->required(),
+                ,
                 Forms\Components\TextInput::make('area')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('bedrooms')
-                    ->numeric(),
-                Forms\Components\TextInput::make('bathrooms')
-                    ->numeric(),
-                Forms\Components\TextInput::make('garages')
-                    ->numeric(),
-                Forms\Components\TextInput::make('status')
-                    ->required(),
+                    ,
+            Forms\Components\KeyValue::make('rooms'),
+
+
+            Forms\Components\KeyValue::make('features'),
+                Forms\Components\Select::make('status')
+                    ->options(['available'=> 'disponible',
+                'sold'=> "vendu",
+                'rented'=> 'rented']),
             ]);
     }
 

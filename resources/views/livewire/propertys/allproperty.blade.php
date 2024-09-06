@@ -3,8 +3,32 @@
 use Livewire\Volt\Component;
 
 new class extends Component {
+
+
+    public $category;
+
+    public function mount(){
+
+    }
+    public function with(){
+
+        return [
+            'properties'=>\App\Models\Property::when($this->category, function($q){
+                dd('ok');
+                $q->where('category_id', $this->category)->get();
+
+            })->get(),
+            'categories'=>\App\Models\Category::all(),
+
+        ];
+    }
     //
+
+
 }; ?>
+
+
+
 
 <div>
 
@@ -32,13 +56,19 @@ new class extends Component {
                     </div>
                     <div class="col-span-6 lg:col-span-3 ">
                         <div class="select-has-icon">
-                            <select class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
-                                <option value="Type" disabled selected>Type</option>
-                                <option value="All">All</option>
-                                <option value="Houses">Houses</option>
-                                <option value="Apartments">Apartments</option>
-                                <option value="Office">Office</option>
-                                <option value="Villa">Villa</option>
+                            <select wire:model.live='category' class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
+                                <option value="Type"  selected>Type</option>
+                                <option value="">All</option>
+
+                                @forelse ($categories as $category)
+                                <option value="{{$category->title}}">{{$category->name}}</option>
+
+                                @empty
+
+
+                                @endforelse
+
+
                             </select>
                             <span class="input-icon input-icon--left text-gradient">
                                 <img src="assets/images/icons/type.svg" alt="">
@@ -97,20 +127,20 @@ new class extends Component {
         </div>
 
         <div class="grid grid-cols-12 gap-6 mt-6 md:mt-0 list-grid-item-wrapper show-two-item">
-           
-            @for($i=0;$i<10;$i++)
+
+            @forelse($properties as $property)
             <div class="col-span-12 md:col-span-6 lg:col-span-4">
                 <div class="property-item style-two">
                     <div class="property-item__thumb">
-                        <a href="property-details.html" class="link">
-                            <img src="images/house/1.png" alt="" class="cover-img">
+                        <a href="{{route('property.detailproperty',$property->slug)}}" class="link">
+                            <img src="{{$property->getFirstMediaUrl('properties')}}" alt="" class="cover-img">
                         </a>
                     </div>
                     <div class="property-item__content">
                         <h6 class="property-item__title">
-                            <a href="{{route('property.detailproperty')}}" class="link"> Maison a louer </a>
+                            <a href="{{route('property.detailproperty',$property->slug)}}" class="link"> {{$property->title}} </a>
                         </h6>
-                        <ul class="amenities-list flx-align">
+                        <ul class="amenities-list flx-align hidden">
                             <li class="amenities-list__item flx-align">
                                 <span class="icon text-gradient"><i class="fas fa-bed"></i></span>
                                 <span class="text">3 Beds</span>
@@ -120,21 +150,21 @@ new class extends Component {
                                 <span class="text">3 Baths</span>
                             </li>
                         </ul>
-                        <h6 class="property-item__price"> $456.00
-                            <span class="day">/par mois</span>
+                        <h6 class="property-item__price"> ${{$property->price}}
+                            <span class="day"></span>
                         </h6>
                         <p class="gap-2 property-item__location d-flex">
                             <span class="icon text-gradient"> <i class="fas fa-map-marker-alt"></i></span>
-                            26 Oshwe, Kasa vubu kinshasa
+                         {{$property->address}}
                         </p>
-                        <a href="{{route('property.detailproperty')}}" class="simple-btn text-gradient fw-semibold font-14">{{__('brand.see_more')}}
+                        <a href="{{route('property.detailproperty',$property->slug)}}" class="simple-btn text-gradient fw-semibold font-14">{{__('brand.see_more')}}
                             <span class="icon-right"> <i class="fas fa-arrow-right"></i> </span> </a>
                     </div>
                 </div>
             </div>
+            @empty
+            @endforelse
 
-            @endfor
-           
         </div>
         <nav aria-label="Page  navigation example">
             <ul class="hidden pagination common-pagination">

@@ -26,7 +26,7 @@ new class extends Component {
     <section class="py-16 project-details">
         <div class="container px-12 container-two">
             <div class="project-details__thumb">
-                <img src="{{$construction->getFirstMediaUrl('projets')}}" class="" alt="">
+                <img src="{{$construction->getFirstMediaUrl('projets')}}" class="w-full h-auto" alt="">
             </div>
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 lg:col-span-8">

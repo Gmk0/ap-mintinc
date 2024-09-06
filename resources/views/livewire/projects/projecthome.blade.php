@@ -62,14 +62,14 @@ $constructions=computed(function(){
 
 
 
-            @foreach ($constructions as $index=> $item)
+            @forelse ($constructions as $index=> $item)
 
             @php
                 $colSpan=match($index){
-                    0=>'col-span-5 lg:col-span-4',
-                    1=>"col-span-7 lg:col-span-8",
-                    2=>'col-span-7 lg:col-span-8',
-                    3=>'col-span-5 lg:col-span-4',
+                    0=>'col-span-6 lg:col-span-6',
+                    1=>"col-span-6 lg:col-span-6",
+                    2=>'col-span-6 lg:col-span-6',
+                    3=>'col-span-6 lg:col-span-6',
                     default=>'col-span-5 lg:col-span-4',
                 }
             @endphp
@@ -80,7 +80,7 @@ $constructions=computed(function(){
                 <div class="gallery-thumb">
 
                     <div class="project-page-thumb">
-                        <img src="{{$item->getFirstMediaUrl('projets')}}" alt="" class="h-72 cover-img">
+                        <img src="{{$item->getFirstMediaUrl('projets')}}" alt="" class="w-full h-96 cover-img">
                         <div class="project-page-content">
                             <h6 class="project-page-content__title">
                                 <a href="{{route('project.detail',$item->slug)}}" class="text-lg link">{{$item->title}}</a>
@@ -91,7 +91,9 @@ $constructions=computed(function(){
                 </div>
             </div>
 
-            @endforeach
+             @empty
+
+            @endforelse
             {{--
             <div class="col-span-5 lg:col-span-4 ">
                 <div class="gallery-thumb">

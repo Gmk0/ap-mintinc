@@ -3,7 +3,7 @@
 
 
 <section class="py-16 lg:py-24 breadcrumb">
-    <img src="assets/images/thumbs/breadcrumb-img.png" alt="" class="breadcrumb__img">
+    <img src="/assets/images/thumbs/breadcrumb-img.png" alt="" class="breadcrumb__img">
     <div class="container px-6">
         <div class="flex justify-center">
             <div class="w-8/12 ">

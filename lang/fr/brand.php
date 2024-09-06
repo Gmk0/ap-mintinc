@@ -36,7 +36,7 @@ return [
     'email_info' => 'info@apmintinc.com',
     'numero'=>'+243 979173177',
     'immeuble'=>'Immeuble Gecamines',
-    'address'=>'N 2 Boulevard du 30 juin Kinshasa /Gombe',
+    'addresse_bureau'=>'N 2 Boulevard du 30 juin Kinshasa /Gombe',
     'landing_title'=> 'Concrétisons ensemble votre projet immobilier.',
     'landing_description'=> 'De la conception à la réalisation, nous sommes à vos côtés pour vous accompagner à chaque étape',
     'about_us'=> 'Apropos de nous',
@@ -58,10 +58,24 @@ return [
     'our_project_title'=> "Déverrouillez la porte de votre nouvelle maison avec nous",
     'footer_desc'=> ' experts en vente de maisons, gestion de projets, et approbation municipale.',
 
-
-
-
-
+    'bed'=>'Chbres',
+    'bathroom'=>'Salle de bain',
+    'subscrire'=>'Souscrire',
+    'subscribe_our_letter'=>'Souscrire a notre newsletter',
+    'nous_contacter'=>'Contacter',
+    'video'=>'video',
+    'features'=>'Caracteristques',
+    'address'=>'Addresse',
+    'sort_by'=>'Filter par',
+    'plus_cher'=>'Plus cher',
+    'moins_cher'=>'Moins cher',
+    'newest'=>'Nouveau',
+    'category'=>'Categorie',
+    'properties'=>'Proprietes',
+    'preview'=>'Apercu',
+    'avez_vous_question'=> 'Avez vous  de question ?',
+    'en_savoir_plus'=> 'vous voulez en savoir plus sur',
+    'nos_service'=>'Nos service',
 
 
 

@@ -5,11 +5,11 @@
             <div class="header-info flx-align">
                 <div class="text-white header-info__item flx-align">
                     <span class="header-info__icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <span class="text-white header-info__text fw-light">{{__('brand.address')}}</span>
+                    <span class="text-white header-info__text fw-light">{{__('brand.addresse_bureau')}}</span>
                 </div>
                 <div class="hidden text-white lg:block header-info__item flx-align">
                     <span class="header-info__icon"><i class="fas fa-envelope"></i></span>
-                    <a href="mailto:" class="text-white header-info__text fw-light">{{__('brand.email_info')}}</a>
+                    <a href="mailto:{{__('brand.email_info')}}" class="text-white header-info__text fw-light">{{__('brand.email_info')}}</a>
                 </div>
             </div>
             <ul class="justify-center gap-2 social-icon-list flx-align">

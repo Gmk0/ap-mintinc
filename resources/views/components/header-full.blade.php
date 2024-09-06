@@ -1,4 +1,4 @@
-  <header class="bg-gray-100 header">
+  <header class="z-[100] bg-gray-100 header">
             <div class="container px-4 container-two">
                 <nav class="header-inner flx-between">
                     <!-- Logo Start -->

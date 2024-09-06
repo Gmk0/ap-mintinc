@@ -1,4 +1,4 @@
-<div class="common-offcanvas d-lg-block d-none">
+<div class="common-offcanvas d-lg-block !text-gray-700 !bg-white d-none">
     <div class="flx-between">
         <a href="index.html" class="mobile-menu__logo">
             <img src="/images/logo.png" width="100" height="100" alt="Logo">
@@ -7,9 +7,9 @@
         </button>
     </div>
 
-    <div class="search-box mt-5">
+    <div class="search-box  hidden mt-5">
         <form action="#">
-            <input type="text" class="common-input common-input--light" placeholder="Search...">
+            <input type="text" class="common-input !text-gray-800 border border-green-600 placeholder:text-gray-700  common-input--light" placeholder="Search...">
             <button type="submit" class="icon"> <i class="fas fa-search"></i> </button>
         </form>
     </div>
@@ -18,21 +18,21 @@
         <li class="address-list__item flx-align">
             <span class="address-list__icon"><i class="fas fa-map-marker-alt"></i></span>
             <div class="address-list__content">
-                <p class="address-list__text">Burmsille Street, MN 55337, <br> United States</p>
+                <p class="address-list__text text-gray-700">{{__('brand.addresse_bureau')}}<br>  RDC</p>
             </div>
         </li>
         <li class="address-list__item flx-align">
-            <span class="address-list__icon"> <i class="fas fa-phone"></i></span>
+            <span class="address-list__icon text-gray-800"> <i class="fas  fa-phone"></i></span>
             <div class="address-list__content">
-                <a href="tel:" class="address-list__text">+(1) 123 456 7890 </a>
-                <a href="tel:" class="address-list__text">+(1) 098 765 4321 </a>
+                <a href="tel:{{__('brand.numero')}}" class="address-list__text text-gray-700">{{__('brand.numero')}} </a>
+
             </div>
         </li>
         <li class="address-list__item flx-align">
-            <span class="address-list__icon"> <i class="fas fa-envelope"></i></span>
+            <span class="address-list__icon text-gray-800"> <i class="fas fa-envelope"></i></span>
             <div class="address-list__content">
-                <a href="mailto:" class="address-list__text"> info@driller.com</a>
-                <a href="mailto:" class="address-list__text">info.example@driller.com</a>
+                <a href="mailto:" class="address-list__text text-gray-700">{{__('brand.email_info')}}</a>
+
             </div>
         </li>
     </ul>

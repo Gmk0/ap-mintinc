@@ -36,11 +36,13 @@ class ConstructionProjectResource extends Resource
                 ->columnSpanFull(),
 
             SpatieMediaLibraryFileUpload::make('images')
-            ->collection('projets')
+            ->collection('properties')
+            ->preserveFilenames()
+
              ->multiple()
                 ->responsiveImages()
-    ->reorderable()
-    ->columnSpanFull(),
+              ->reorderable()
+              ->columnSpanFull(),
 
 
                 Forms\Components\DatePicker::make('start_date'),
@@ -49,7 +51,7 @@ class ConstructionProjectResource extends Resource
                     ->columnSpanFull(),
             Forms\Components\TextInput::make('client'),
             Forms\Components\TextInput::make('category'),
-            Forms\Components\TextInput::make('const')->numeric(),
+            Forms\Components\TextInput::make('cost')->numeric(),
                 Forms\Components\Toggle::make('afficher')
                     ->required(),
                 Forms\Components\TextInput::make('property_id')

@@ -16,6 +16,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use FilamentTiptapEditor\TiptapEditor;
+use FilamentTiptapEditor\Enums\TiptapOutput;
 
 class ExpertiseResource extends Resource
 {
@@ -37,7 +40,27 @@ class ExpertiseResource extends Resource
                 ->columnSpan(2),
             Forms\Components\Textarea::make('description')->columnSpanFull(),
 
-            Forms\Components\MarkdownEditor::make('content')->columnSpanFull(),            Forms\Components\TextInput::make('icon'),
+
+            TiptapEditor::make('content')
+                    ->profile('simple')
+                  //  ->tools([]) // individual tools to use in the editor, overwrites profile
+                   // ->disk('string') // optional, defaults to config setting
+                   // ->directory('string or Closure returning a string') // optional, defaults to config setting
+                    //->acceptedFileTypes() // optional, defaults to config setting
+                    ->maxSize('1024') // optional, defaults to config setting
+                    ->output(TiptapOutput::Html) // optional, change the format for saved data, default is html
+                    ->maxContentWidth('5xl')
+                    ->columnSpanFull()
+                    ->required(),
+                  Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
+            ->preserveFilenames()
+            ->collection('icon')
+            ->responsiveImages(),
+            Forms\Components\SpatieMediaLibraryFileUpload::make('image')
+            ->preserveFilenames()
+
+                ->responsiveImages()
+             ,
 
             Forms\Components\Select::make('status')
             ->options([

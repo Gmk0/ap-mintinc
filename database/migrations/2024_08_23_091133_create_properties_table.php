@@ -14,19 +14,23 @@ return new class extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->json('title'); // Title of the property
-            $table->json('description');
+            $table->json('description')->nullable();
             $table->json('slug'); // Description of the property
             $table->decimal('price', 15, 2); // Price of the property
-            $table->enum('type', ['house', 'apartment', 'land']); // Type of property
-            $table->string('address'); // Address of the property
-            $table->string('city'); // City where the property is located
-            $table->string('state'); // State where the property is located
-            $table->string('country'); // Country where the property is located
-            $table->integer('area'); // Size of the property in square meters
-            $table->integer('bedrooms')->nullable(); // Number of bedrooms
-            $table->integer('bathrooms')->nullable(); // Number of bathrooms
-            $table->integer('garages')->nullable(); // Number of garages
-            $table->enum('status', ['available', 'sold', 'rented']); // Status of the property
+          // Type of property
+            $table->string('address')->nullable(); // Address of the
+            $table->string('lien_video')->nullable();
+            $table->json('features')->nullable();
+          //  $table->string('city')->nullable(); // City where the property is located
+            $table->string('state')->nullable(); // State where the property is located
+            $table->string('country')->nullable(); // Country where the property is located
+            $table->string('area')->nullable(); // Size of the property in square meters
+            $table->json('rooms')->nullable(); // Number of bedrooms
+
+            $table->foreignId('category_id')->constrained();
+            $table->enum('status', ['available', 'sold', 'rented'])->default('available');
+            $table->boolean('afficher')->default(true);
+            // Status of the property
             //$table->foreignId('agent_id')->constrained('users'); // Foreign key to users table (agent)
             $table->timestamps();
         });

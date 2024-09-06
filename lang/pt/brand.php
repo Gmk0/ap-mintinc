@@ -1,59 +1,62 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | As seguintes linhas de linguagem são usadas durante a autenticação para
-    | várias mensagens que precisamos exibir ao usuário. Você é livre para
-    | modificar essas linhas de linguagem de acordo com os requisitos de sua
-    | aplicação.
-    |
-    */
-
     'home' => 'início',
-
-    'Project' => 'projetos',
-    'contact' => 'contato',
+    'Project' => "projetos",
+    'contact' => "contato",
     'property' => 'propriedades',
     'add_property' => 'Vender uma Propriedade',
-    'contat_us' => 'Contate-Nos',
+    'contat_us' => 'Contate-nos',
     'about_proffesional' => 'Nossos Especialistas',
-
-    'your_name' => 'Your Name',
-    'your_email' => 'Your Email',
-    'your_phone' => 'Your Phone',
-    "your_message" => 'Your Message',
-
-    'send' => 'Envoyer',
-    'project_realiser' => 'Projet realiser',
-
+    'your_name' => 'Seu Nome',
+    'your_email' => 'Seu Email',
+    'your_phone' => 'Seu Número de Telefone',
+    "your_message" => 'Sua Mensagem',
+    'send' => 'Enviar',
+    'project_realiser' => 'Projetos Realizados',
+    'year_expertise' => "Anos de Expertise",
+    'house_sold' => 'Casa Vendida',
+    "project_pending" => 'Projetos em Andamento',
     'brandTitle' => 'Essas credenciais não correspondem aos nossos registros.',
     'email_info' => 'info@apmintinc.com',
     'numero' => '+243 979173177',
-    'immeuble' => 'Edifício Gecamines',
-    'address' => 'N 2 Boulevard du 30 juin Kinshasa /Gombe',
-    'landing_title' => 'Vamos realizar juntos o seu projeto imobiliário.',
-    'landing_description' => 'Da concepção à conclusão, estamos ao seu lado para apoiar em cada etapa',
+    'immeuble' => 'Prédio Gecamines',
+    'addresse_bureau' => 'N 2 Boulevard do 30 de junho Kinshasa /Gombe',
+    'landing_title' => 'Realize o Seu Projeto Imobiliário Conosco.',
+    'landing_description' => 'Da concepção à realização, estamos ao seu lado em cada etapa',
     'about_us' => 'Sobre Nós',
-    'about_title' => 'Sua nova casa está à espera—deixe-nos ajudá-lo a chegar lá rapidamente',
+    'about_title' => 'Sua Nova Casa o Aguarda—Nós Ajudamos Você a Chegar Lá Rapidamente',
     "about_desc_1" => 'Transforme suas ambições imobiliárias em sucesso com nossa gestão estratégica de propriedades.',
-    "about_desc_2" => 'Deixe-nos guiá-lo na realização do seu projeto imobiliário dos sonhos',
-    'about_desc_f' => 'Imóveis residenciais reinventados: encontre, venda ou alugue sua próxima propriedade conosco.',
+    "about_desc_2" => "Deixe-nos guiá-lo para realizar o projeto imobiliário dos seus sonhos",
+    'about_desc_f' => 'Imobiliário Residencial Reinventado: Compre, Venda ou Alugue Sua Próxima Propriedade Conosco.',
     'more' => 'ver mais',
     'our_expertise' => 'Nossa Expertise',
     'services' => 'serviços',
-    'why_choose_us' => 'Por Que Nos Escolher?',
+    'why_choose_us' => 'Por que nos Escolher?',
     'why_choose_us_title' => 'Transforme Seus Projetos Imobiliários em Realidade',
-    'why_choose_us_description' => 'Escolha a AP MANAGEMENT INTERNATIONAL INC pela nossa completa expertise em gestão de projetos, vendas de imóveis e aprovação municipal. Oferecemos planejamento estratégico personalizado e otimizamos cada aspecto de suas transações residenciais. Com nossa abordagem integrada, reduzimos riscos e maximizamos a rentabilidade de seus projetos imobiliários.',
+    'why_choose_us_description' => 'Escolha a AP MANAGEMENT INTERNATIONAL INC por nossa expertise completa em gestão de projetos, vendas de casas e aprovações municipais. Oferecemos planejamento estratégico sob medida e otimizamos todos os aspectos das suas transações residenciais. Com nossa abordagem integrada, reduzimos riscos e maximizamos a rentabilidade dos seus projetos imobiliários.',
     'last_offer' => 'Nossas Últimas Ofertas',
-    'best_life' => 'Viva a Sua Melhor Vida na Sua Nova Casa',
+    'best_life' => 'Viva Sua Melhor Vida em Sua Nova Casa',
     'see_more' => 'ver mais',
-
     'our_project' => 'Nossos Projetos',
-    'our_project_title' => 'Destrave a porta de sua nova casa conosco',
-    'footer_desc' => 'especialistas em vendas de imóveis, gestão de projetos e aprovação municipal.',
+    'our_project_title' => "Destrave a Porta da Sua Nova Casa Conosco",
+    'footer_desc' => 'Especialistas em vendas de casas, gestão de projetos e aprovações municipais.',
+    'bed' => 'Quartos',
+    'bathroom' => 'Banheiro',
+    'subscrire' => 'Assinar',
+    'subscribe_our_letter' => 'Assine Nossa Newsletter',
+    'nous_contacter' => 'Contato',
+    'video' => 'vídeo',
+    'features' => 'Características',
+    'address' => 'Endereço',
+    'sort_by' => 'Filtrar por',
+    'plus_cher' => 'Mais Caro',
+    'moins_cher' => 'Mais Barato',
+    'newest' => 'Mais Novo',
+    'category' => 'Categoria',
+    'properties' => 'Propriedades',
+    'preview' => 'Prévia',
+    'avez_vous_question' => 'Você tem alguma pergunta?',
+    'en_savoir_plus' => 'Quer saber mais sobre',
+    'nos_service' => 'Nossos Serviços'
 ];
