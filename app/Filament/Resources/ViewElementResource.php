@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TranslationResource\Pages;
-use App\Filament\Resources\TranslationResource\RelationManagers;
-use App\Models\Translation;
+use App\Filament\Resources\ViewElementResource\Pages;
+use App\Filament\Resources\ViewElementResource\RelationManagers;
+use App\Models\ViewElement;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,10 +12,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\Concerns\Translatable;
 
-class TranslationResource extends Resource
+
+class ViewElementResource extends Resource
 {
-    protected static ?string $model = Translation::class;
+     use Translatable;
+    protected static ?string $model = ViewElement::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,17 +26,9 @@ class TranslationResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('model_type')
-                    ->required(),
-                Forms\Components\TextInput::make('model_id')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('field')
-                    ->required(),
-                Forms\Components\TextInput::make('locale')
-                    ->required(),
-                Forms\Components\Textarea::make('translation')
-                    ->required()
+                Forms\Components\Textarea::make('about')
+                    ->columnSpanFull(),
+                Forms\Components\Textarea::make('team')
                     ->columnSpanFull(),
             ]);
     }
@@ -42,17 +37,6 @@ class TranslationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('model_type')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('model_id')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('field')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('locale')
-                    ->searchable(),
-            Tables\Columns\TextColumn::make('translation')
-                ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -85,9 +69,9 @@ class TranslationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTranslations::route('/'),
-            'create' => Pages\CreateTranslation::route('/create'),
-            'edit' => Pages\EditTranslation::route('/{record}/edit'),
+            'index' => Pages\ListViewElements::route('/'),
+            'create' => Pages\CreateViewElement::route('/create'),
+            'edit' => Pages\EditViewElement::route('/{record}/edit'),
         ];
     }
 }

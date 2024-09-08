@@ -2,7 +2,40 @@
 
 use function Livewire\Volt\{layout, state, title};
 
-title('contacts')
+title('contacts');
+
+state(['contact'=>[]]);
+
+
+$save = function () {
+$this->validate([
+'contact.nom' => 'required|string|max:255',
+'contact.email' => 'required|email',
+'contact.telephone' => 'required|string|max:20',
+'contact.sujet' => 'required|string|max:255',
+'contact.message' => 'required|string|max:500',
+]);
+
+try{
+    \App\Models\Contact::create($this->contact);
+
+    $this->contact=[];
+
+    $this->dispatch('event',['icon'=>'success', 'title'=>'Votre message a ete envoyer avec succes']);
+
+}catch(\Exception $e){
+
+
+}
+
+
+// Code to save data after validation
+};
+
+
+
+
+
 ?>
 
 <div>
@@ -16,12 +49,12 @@ title('contacts')
     <div class="container container-two">
         <div class="section-heading">
             <span class="bg-gray-100 section-heading__subtitle">
-                <span class="text-gradient fw-semibold">Contact</span>
+                <span class="text-gradient fw-semibold">{{__('brand.contact')}}</span>
             </span>
-            <h2 class="section-heading__title">Contact Us!</h2>
+            <h2 class="text-3xl section-heading__title lg:text-4xl">{{('brand.contact_us')}}</h2>
         </div>
         <div class="grid grid-cols-12 gap-4">
-            <div class="col-span-6 lg:col-span-4">
+            <div class="col-span-12 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-paper-plane"></i></span>
                     <h5 class="contact-card__title">Email</h5>
@@ -33,16 +66,16 @@ title('contacts')
                     </p>
                 </div>
             </div>
-            <div class="col-span-6 lg:col-span-4">
+            <div class="col-span-12 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <h5 class="contact-card__title">Location</h5>
+                    <h5 class="contact-card__title">{{__('brand.location')}}</h5>
                     <p class="contact-card__text font-18">
                         {{__('brand.address')}}
                     </p>
                 </div>
             </div>
-            <div class="col-span-6 lg:col-span-4">
+            <div class="col-span-12 lg:col-span-4">
                 <div class="contact-card">
                     <span class="contact-card__icon"><i class="fas fa-phone"></i></span>
                     <h5 class="contact-card__title">Contacts </h5>
@@ -71,34 +104,48 @@ title('contacts')
         <div class="bg-white contact-form">
             <div class="section-heading">
                 <span class="bg-gray-100 section-heading__subtitle">
-                    <span class="text-gradient fw-semibold">Contact us</span>
+                    <span class="text-gradient fw-semibold">{{__('brand.contact_us')}}</span>
                 </span>
-                <h2 class="section-heading__title">Avez vous de question? </h2>
-                <p class="section-heading__desc">For your car we will do everything advice, repairs and maintenance. We
-                    are the some preferred choice by many car owners because</p>
+                <h2 class="text-3xl section-heading__title lg:text-4xl">{{__('brand.avez_vous_question')}} </h2>
+                <p class=" section-heading__desc">{{__('brand.question_response')}}</p>
             </div>
-            <form action="#" class="contact-form__form">
-                <div class="grid grid-cols-12 gap-4">
-                    <div class="col-span-6 col-xs-6">
-                        <input type="text" class="common-input" placeholder="Votre Nom">
-                    </div>
-                    <div class="col-span-6 col-xs-6">
-                        <input type="email" class="common-input" placeholder="Votre E-mail">
-                    </div>
-                    <div class="col-span-6 col-xs-6">
-                        <input type="tel" class="common-input" placeholder="Numero de telephone">
-                    </div>
-                    <div class="col-span-6 col-xs-6">
-                        <input type="text" class="common-input" placeholder="Sujet">
-                    </div>
-                    <div class="col-span-12">
-                        <textarea class="common-input" placeholder="Votre Message"></textarea>
-                    </div>
-                    <div class="flex items-center justify-center col-span-12">
-                        <button type="submit" class="btn btn-main w-100">Envoyer</button>
-                    </div>
+          <form wire:submit.prevent='save' class="contact-form__form">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="w-full col-span-12 lg:col-span-6 col-xs-6">
+                    <input type="text" required wire:model='contact.nom' class="common-input" placeholder="Votre Nom">
+                    @error('contact.nom')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
                 </div>
-            </form>
+                <div class="w-full col-span-12 lg:col-span-6 col-xs-6">
+                    <input type="email" required wire:model='contact.email' class="common-input" placeholder="Votre E-mail">
+                    @error('contact.email')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-12 lg:col-span-6 col-xs-6">
+                    <input type="tel" required wire:model='contact.telephone' class="common-input" placeholder="Numero de telephone">
+                    @error('contact.telephone')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="col-span-12 lg:col-span-6 col-xs-6">
+                    <input wire:model='contact.sujet' required type="text" class="common-input" placeholder="Sujet">
+                    @error('contact.sujet')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="w-full col-span-12">
+                    <textarea wire:model='contact.message' required class="common-input" placeholder="Votre Message"></textarea>
+                    @error('contact.message')
+                    <span class="text-red-500">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="flex items-center justify-center col-span-12">
+                    <button type="submit" class="btn btn-main w-100">Envoyer</button>
+                </div>
+            </div>
+        </form>
         </div>
     </div>
 </section>

@@ -23,8 +23,10 @@
         <link rel="stylesheet" href="/assets/css/jquery-ui.css">
         <!-- Main css -->
         <link rel="stylesheet" href="/assets/css/main.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         @vite(['resources/css/app.css','resources/js/app.js'])
+
 
         @livewireStyles
 
@@ -106,7 +108,27 @@
         <!-- main js -->
         <script src="/assets/js/main.js"></script>
 
+
+
+
      @livewireScriptConfig
+
+     <script>
+            document.addEventListener('livewire:init', () => {
+                    Livewire.on('event', (event) => {
+
+                        Swal.fire({
+                        icon: event[0].icon,
+                        title:event[0].title ,
+                        position:'top-end',
+                        toast:true,
+
+                        });
+                    //
+                    });
+                    });
+
+        </script>
 
 
     </body>

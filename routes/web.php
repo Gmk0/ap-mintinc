@@ -16,6 +16,7 @@ Route::get('change-language/{locale}', function ($locale) {
 
 Volt::route('/about', 'about')->name('about');
 Volt::route('/contact', 'contact')->name('contact');
+Volt::route('/contact', 'contact')->name('contact');
 
 Volt::route('/projects/{slug}', 'projects.detailproject')->name('project.detail');
 

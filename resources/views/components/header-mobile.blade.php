@@ -34,7 +34,7 @@
                     <a href="{{route('contact')}}" class="nav-menu__link">{{__('brand.contact')}}</a>
                 </li>
             </ul>
-            <a href="#" class="mt-4 btn btn-outline-light d-lg-none d-block">{{__('brand.add_property')}} <span
+            <a href="{{route('property.sellproperty')}}" class="mt-4 btn btn-outline-light d-lg-none d-block">{{__('brand.add_property')}} <span
                     class="icon-right text-gradient"> <i class="fas fa-arrow-right"></i> </span> </a>
         </div>
     </div>
