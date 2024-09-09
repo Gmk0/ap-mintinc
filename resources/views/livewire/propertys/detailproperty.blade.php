@@ -76,21 +76,25 @@ new class extends Component {
                             <div class="property-details-item__content">
                                 <div class="grid grid-cols-12 gap-4 lg:gap-5">
                                     @empty (!$property->rooms)
-                                    <div class="col-span-6 lg:col-span-4">
+                                    <div class="col-span-6 lg:col-span-6">
                                         <div class="flex items-center amenities-content">
                                             <span class="amenities-content__icon">
                                                 <img src="/assets/images/icons/amenities1.svg" alt="">
                                             </span>
-                                            <div class="amenities-content__inner">
+                                            <div class="flex gap-4 amenities-content__inner">
                                                 <span class="amenities-content__text">{{__('brand.chambre')}}</span>
-                                                @forelse ($property->rooms as $key=> $value)
+                                              <ul class="pl-5 my-2 list-disc">
+                                                 @forelse ($property->rooms as $key => $value)
 
-                                                <h6 class="my-1 amenities-content__title font-16">{{$key}}  {{$value}}</h6>
+                                                <li>
+                                                    <h6 class="text-lg font-semibold text-gray-700">{{ $key }} : <span class="text-gray-500">{{ $value }}</span>
+                                                    </h6>
+                                                </li>
 
-                                                @empty
-
-                                                @endforelse
-
+                                            @empty
+                                            <p class="text-red-500">Aucune pièce disponible.</p>
+                                            @endforelse
+                                            </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +138,7 @@ new class extends Component {
                                             </span>
 
                                             <div class="amenities-content__inner">
-                                                <span class="amenities-content__text">{{('brand.Property Type')}}</span>
+                                                <span class="amenities-content__text">{{__('brand.Property Type')}}</span>
                                                 <h6 class="mb-0 amenities-content__title font-16">{{$property->category->name}}</h6>
                                             </div>
                                         </div>
