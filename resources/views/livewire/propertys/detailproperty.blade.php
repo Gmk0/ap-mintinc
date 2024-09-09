@@ -81,13 +81,13 @@ new class extends Component {
                                             <span class="amenities-content__icon">
                                                 <img src="/assets/images/icons/amenities1.svg" alt="">
                                             </span>
-                                            <div class="flex gap-4 amenities-content__inner">
+                                            <div class="amenities-content__inner">
                                                 <span class="amenities-content__text">{{__('brand.chambre')}}</span>
                                               <ul class="pl-5 my-2 list-disc">
                                                  @forelse ($property->rooms as $key => $value)
 
                                                 <li>
-                                                    <h6 class="text-lg font-semibold text-gray-700">{{ $key }} : <span class="text-gray-500">{{ $value }}</span>
+                                                    <h6 class="text-base text-gray-700">{{ $key }} : <span class="text-gray-500">{{ $value }}</span>
                                                     </h6>
                                                 </li>
 
