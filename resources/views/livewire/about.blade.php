@@ -60,8 +60,8 @@ public function mount(){
                     <div class="about-content">
                         <div class="section-heading style-left">
                             <span class="bg-gray-100 section-heading__subtitle"> <span
-                                    class="text-gradient fw-semibold">{{('brand.about_us')}}</span> </span>
-                            <h2 class="text-2xl text-4xl section-heading__title">{{('brand.Votre vision notre Objectif')}}</h2>
+                                    class="text-gradient fw-semibold">{{__('brand.about_us')}}</span> </span>
+                            <h2 class="text-2xl text-4xl section-heading__title">{{__('brand.Votre vision notre Objectif')}}</h2>
                             <p class="text-justify section-heading__desc font-18">{{$viewElement->about}}
                             </p>
                         </div>
