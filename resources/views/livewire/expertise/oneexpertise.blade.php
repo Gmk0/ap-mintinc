@@ -100,7 +100,7 @@ mount(function($slug){
                 <div class="section-heading">
 
                     <h2 class="text-2xl section-heading__title">{{__('brand.avez_vous_question')}}? </h2>
-                    <p class="text-2xl section-heading__desc">{{('brand.en_savoir_plus')}} {{$expertise->title}}</p>
+                    <p class="text-2xl section-heading__desc">{{__('brand.en_savoir_plus')}} {{$expertise->title}}</p>
                 </div>
                 <form action="#" class="contact-form__form">
                     <div class="grid grid-cols-12 gap-4">
