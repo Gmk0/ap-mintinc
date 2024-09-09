@@ -62,4 +62,14 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        function changeLanguage(locale) {
+                        const form = document.createElement('form');
+                        form.method = 'GET';
+                        form.action = `{{ route('change.language', '') }}/${locale}`;
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+    </script>
 </div>
