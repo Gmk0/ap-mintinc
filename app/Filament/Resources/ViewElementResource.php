@@ -15,7 +15,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
-
+use PepperFM\FilamentJson\Columns\JsonColumn;
 
 class ViewElementResource extends Resource
 {
@@ -40,6 +40,7 @@ class ViewElementResource extends Resource
                 ->label('Photo')
                     ->image()
                     ->required()
+                    ->imageEditor()
                     ->disk('public') // Assurez-vous d'avoir le bon disque configuré
                     ->directory('members/photos'),
 
@@ -54,8 +55,8 @@ class ViewElementResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('about')
                 ->searchable(),
-            Tables\Columns\TextColumn::make('team')
-            ->searchable(),
+            JsonColumn::make('team'),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

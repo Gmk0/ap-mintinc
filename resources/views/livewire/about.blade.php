@@ -78,7 +78,7 @@ public function mount(){
     <livewire:home.allexpertise />
     <!-- ======================= Property Type Three End =========================== -->
     <!-- ========================= Team Section Start ============================= -->
-    <section class="px-6 py-32 team">
+    <section class="px-6 py-8 team">
         <div class="container container-two">
             <div class="gap-3 section-heading style-left style-flex flx-between align-items-end">
                 <div class="section-heading__inner">
