@@ -26,6 +26,7 @@ class ExpertiseResource extends Resource
     protected static ?string $model = Expertise::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Expertise';
 
     public static function form(Form $form): Form
     {
@@ -51,6 +52,7 @@ class ExpertiseResource extends Resource
                     ->output(TiptapOutput::Html) // optional, change the format for saved data, default is html
                     ->maxContentWidth('5xl')
                     ->columnSpanFull()
+            ->columnSpan(2)
                     ->required(),
                   Forms\Components\SpatieMediaLibraryFileUpload::make('icon')
             ->preserveFilenames()

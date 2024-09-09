@@ -82,10 +82,10 @@ new class extends Component {
                                                 <img src="/assets/images/icons/amenities1.svg" alt="">
                                             </span>
                                             <div class="amenities-content__inner">
-                                                <span class="amenities-content__text">chamabre</span>
+                                                <span class="amenities-content__text">{{__('brand.chambre')}}</span>
                                                 @forelse ($property->rooms as $key=> $value)
 
-                                                <h6 class="mb-0 amenities-content__title font-16">{{$key}}  {{$value}}</h6>
+                                                <h6 class="my-1 amenities-content__title font-16">{{$key}}  {{$value}}</h6>
 
                                                 @empty
 
@@ -97,7 +97,7 @@ new class extends Component {
                                     @endempty
 
 
-                                    <div class="col-span-6 hidden lg:col-span-4">
+                                    <div class="hidden col-span-6 lg:col-span-4">
                                         <div class="flex items-center amenities-content">
                                             <span class="amenities-content__icon">
                                                 <img src="/assets/images/icons/amenities4.svg" alt="">
@@ -116,7 +116,7 @@ new class extends Component {
                                             </span>
 
                                             <div class="amenities-content__inner">
-                                                <span class="amenities-content__text">Size</span>
+                                                <span class="amenities-content__text">{{__('brand.size')}}</span>
                                                 <h6 class="mb-0 amenities-content__title font-16">{{$property->area}}</h6>
                                             </div>
 
@@ -134,7 +134,7 @@ new class extends Component {
                                             </span>
 
                                             <div class="amenities-content__inner">
-                                                <span class="amenities-content__text">Property Type</span>
+                                                <span class="amenities-content__text">{{('brand.Property Type')}}</span>
                                                 <h6 class="mb-0 amenities-content__title font-16">{{$property->category->name}}</h6>
                                             </div>
                                         </div>
@@ -150,14 +150,12 @@ new class extends Component {
                             <h6 class="property-details-item__title">{{__('brand.features')}}</h6>
                             <div class="property-details-item__content">
                                 <div class="grid grid-cols-12 gap-2">
-                                    @foreach ($property->features as $key=>$value)
+                                    @foreach ($property->features as $value)
                                     <div class="col-span-6">
                                         <ul class="check-list">
-
-
                                             <li class="flex items-center check-list__item">
                                                 <span class="icon"><i class="fas fa-check"></i></span>
-                                                <span class="text">{{$value}}</span>
+                                                <span class="text">{{$value['feature'?? 'no name']}}</span>
                                             </li>
 
 
@@ -181,7 +179,7 @@ new class extends Component {
                                             <h6 class="mb-0 address-content__title font-15">{{$property->state}}-{{$property->country}}</h6>
                                         </div>
                                     </div>
-                                    <div class="col-span-6 hidden">
+                                    <div class="hidden col-span-6">
                                         <div class="flex items-center gap-4 address-content">
                                             <span class="address-content__text font-18">Code</span>
                                             <h6 class="mb-0 address-content__title font-15">2365</h6>
@@ -213,7 +211,7 @@ new class extends Component {
                         </div>
                         @endempty
 
-                       <div class="mt-2 flex justify-center">
+                       <div class="flex justify-center mt-2">
                         <a href="https://wa.me/2430844720350?text={{ urlencode('Bonjour, je suis intéressé par la maison : ' . $property->title) }}"
                             target="_blank" class="flex-shrink-0 btn btn-main fw-normal">
                             {{ __('brand.nous_contacter') }}
@@ -240,7 +238,7 @@ new class extends Component {
 
                             </ul>
                         </div>
-                        <div class="common-sidebar hidden">
+                        <div class="hidden common-sidebar">
                             <h6 class="common-sidebar__title"> Recent Post </h6>
                             <div class="latest-blog">
                                 <div class="latest-blog__thumb">
@@ -295,7 +293,7 @@ new class extends Component {
                                <div class="col-span-6 lg:col-span-4">
                                 <a href="{{route('property.detailproperty',$property->slug)}}" class="properties-item d-block w-100">
                                     <img src="{{$property->getFirstMediaUrl('properties')}}" alt="Property Image" class="cover-img">
-                                    <span class="properties-item__text truncate">{{$property->title}}</span>
+                                    <span class="truncate properties-item__text">{{$property->title}}</span>
                                 </a>
                             </div>
 

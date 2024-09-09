@@ -18,6 +18,7 @@ class ContactResource extends Resource
     protected static ?string $model = Contact::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Admin';
 
     public static function form(Form $form): Form
     {
@@ -31,6 +32,25 @@ class ContactResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('nom')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('email')
+            ->searchable(),
+            Tables\Columns\TextColumn::make('contact')
+            ->searchable(),
+            Tables\Columns\TextColumn::make('sujet')
+            ->searchable(),
+            Tables\Columns\TextColumn::make('message')
+            ->searchable(),
+
+            Tables\Columns\TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+            Tables\Columns\TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
             //
 
 

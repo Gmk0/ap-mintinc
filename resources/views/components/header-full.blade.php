@@ -27,6 +27,9 @@
                                     <li class="nav-submenu__item">
                                         <a href="{{route('project.allprojects')}}" class="nav-submenu__link"> {{__('brand.Project')}} </a>
                                     </li>
+                                    <li class="nav-submenu__item">
+                                        <a href="{{route('property.sellproperty')}}" class="nav-submenu__link"> {{__('brand.add_property')}} </a>
+                                    </li>
 
                                 </ul>
                             </li>

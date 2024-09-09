@@ -9,7 +9,7 @@
             <div class="property-filter">
                 <form action="#">
                     <div class="grid grid-cols-12 gap-4">
-                        <div class="col-span-6 hidden lg:col-span-2 ">
+                        <div class="hidden col-span-6 lg:col-span-2 ">
                             <div class="select-has-icon">
                                 <select class="text-gray-800 form-select common-input common-input--withLeftIcon pill">
                                     <option value="Status" disabled selected>Status</option>
@@ -58,12 +58,12 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="col-span-6 lg:col-span-3">
+                        <div class="col-span-12 lg:col-span-4">
                             <div class="position-relative">
                                 <input wire:model.live='search' type="text" class="text-gray-800 common-input common-input--withLeftIcon pill"
                                     placeholder="Recherche">
                                 <span class="input-icon input-icon--left text-gradient">
-                                    <img src="assets/images/icons/filter.svg" alt="">
+                                    <img src="/assets/images/icons/filter.svg" alt="">
                                 </span>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                 <a href="{{route('property.detailproperty',$property->slug)}}" class="link">
                                     {{$property->title}} </a>
                             </h6>
-                            <ul class="amenities-list flx-align hidden">
+                            <ul class="hidden amenities-list flx-align">
                                 <li class="amenities-list__item flx-align">
                                     <span class="icon text-gradient"><i class="fas fa-bed"></i></span>
                                     <span class="text">3 Beds</span>

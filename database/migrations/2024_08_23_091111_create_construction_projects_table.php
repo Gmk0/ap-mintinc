@@ -17,9 +17,8 @@ return new class extends Migration
             $table->json('title');
             $table->json('slug');
             $table->json('content')->nullable();
-            $table->json('category')->nullable();
             $table->string('client')->nullable();
-            $table->decimal('cost')->nullable();
+            $table->decimal('price')->nullable();
              // Title of the construction project
             $table->json('description')->nullable(); // Description of the project (nullable)
             $table->date('start_date')->nullable(); // Start date of the project (nullable)
@@ -28,7 +27,8 @@ return new class extends Migration
             $table->enum('status', ['pending', 'in progress', 'completed'])->default('pending'); // Status of the project
             $table->boolean('afficher')->default(false); // Status of the project
            // $table->foreignId('client_id')->constrained('users'); // Foreign key to users table (client)
-            $table->foreignId('property_id')->nullable(); // Foreign key to properties table (property)
+            $table->foreignId('property_id')->nullable();
+            $table->foreignId('category_id')->nullable(); // Foreign key to properties table (property)
             $table->timestamps(); // Created at and updated at timestamps
         });
     }

@@ -22,11 +22,11 @@ new class extends Component {
 }; ?>
 
 <div>
-    <x-bread-cumb title="Details projets" :firsturl="route('project.allprojects')" secondelement="first"  />
+    <x-bread-cumb title="{{__('brand.Details projets')}}" :firsturl="route('project.allprojects')" secondelement="{{ Str::limit($construction->title, 12,'...') }}"  />
     <section class="py-16 project-details">
         <div class="container px-12 container-two">
             <div class="project-details__thumb">
-                <img src="{{$construction->getFirstMediaUrl('projets')}}" class="w-full h-auto" alt="">
+                <img src="{{$construction->getFirstMediaUrl('projets')}}" class="object-fill w-full h-auto" alt="">
             </div>
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12 lg:col-span-8">
@@ -35,7 +35,11 @@ new class extends Component {
 
                         <div class="prose">
 
-                            {{$construction->description}}
+
+                            {!! tiptap_converter()->asHTML($construction->description) !!}
+
+
+
 
                         </div>
 
@@ -53,11 +57,11 @@ new class extends Component {
                                 <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->client}}</h6>
                             </li>
                             @endif
-                            @if ($construction->cost)
+                            @if ($construction->price)
 
 
                             <li class="project-sidebar__item">
-                                <span class="project-sidebar__text font-12">{{$construction->cost}}</span>
+                                <span class="project-sidebar__text font-12">{{$construction->price}}</span>
                                 <h6 class="mb-0 font-semibold project-sidebar__title font-16">cout du projet  </h6>
                             </li>
                             @endif
@@ -65,12 +69,12 @@ new class extends Component {
                             @if($construction->category)
                             <li class="project-sidebar__item">
                                 <span class="project-sidebar__text font-12">Category</span>
-                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->category}}</h6>
+                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->category->name}}</h6>
                             </li>
                             @endif
                             <li class="project-sidebar__item">
                                 <span class="project-sidebar__text font-12">Date</span>
-                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->end_date}}</h6>
+                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->end_date->format('Y/m/d')}}</h6>
                             </li>
                         </ul>
                         <ul class="mt-4 social-share-list style-two lg:mt-5">
@@ -93,6 +97,31 @@ new class extends Component {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="mt-12">
+
+                <div class="py-6">
+                    <h2 class="text-2xl text-gray-700 lg:text-4xl section-heading__title">
+                        {{__('brand.gallery')}}</h2>
+
+                </div>
+
+                <div class="grid grid-cols-12 gap-4">
+                    @foreach ($construction->getMedia('*') as $media)
+                    <div class="col-span-3">
+                        <div class="gallery-thumb">
+                            <img src="{{$media->getUrl()}}" alt="" class="{{$media->name}}">
+                            <a href="{{$media->getUrl()}}" class="gallery-thumb__link gallery-popup">
+                                <i class="fas fa-expand-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    @endforeach
+
+
+                    </div>
+
             </div>
         </div>
     </section>

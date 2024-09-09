@@ -118,7 +118,7 @@ $expertises=computed(function(){
             @forelse ($this->expertises as $expert)
             <div class="flex items-center gap-3 service-slider__item">
                 <span class="service-slider__icon">
-                    <img src="/assets/images/icons/service-slider-icon1.svg" alt="">
+                    <img src="{{$expert->getFirstMediaUrl('icon')}}" class="w-12" alt="">
                 </span>
                 <h2 class="mb-0 font-semibold service-slider__text">{{$expert->title}}</h2>
             </div>
@@ -206,7 +206,7 @@ $expertises=computed(function(){
                                 </span>
                                 <h2 class="mb-0 counter-six-item__number">150+</h2>
                             </div>
-                            <span class="counter-six-item__text font-18">PROJETS RÉALISÉS</span>
+                            <span class="counter-six-item__text font-18">{{__('brand.projet_realiser')}}</span>
                         </div>
                     </div>
                     <div class="col-span-6 lg:col-span-3">
@@ -217,7 +217,7 @@ $expertises=computed(function(){
                                 </span>
                                 <h2 class="mb-0 counter-six-item__number">100+</h2>
                             </div>
-                            <span class="counter-six-item__text font-18">MAISONS VENDUES</span>
+                            <span class="counter-six-item__text font-18">{{__('brand.maison_vendu')}}</span>
                         </div>
                     </div>
                     <div class="col-span-6 lg:col-span-3">
@@ -228,7 +228,7 @@ $expertises=computed(function(){
                                 </span>
                                 <h2 class="mb-0 counter-six-item__number">50+</h2>
                             </div>
-                            <span class="counter-six-item__text font-18">PROJETS EN COURS</span>
+                            <span class="counter-six-item__text font-18">{{__('brand.projet_encours')}}</span>
                         </div>
                     </div>
                     <div class="col-span-6 lg:col-span-3">
@@ -239,7 +239,7 @@ $expertises=computed(function(){
                                 </span>
                                 <h2 class="mb-0 counter-six-item__number">20+</h2>
                             </div>
-                            <span class="counter-six-item__text font-18">ANNEES D'EXPERTISE</span>
+                            <span class="counter-six-item__text font-18">{{__('brand.annee_expertise')}}</span>
                         </div>
                     </div>
                 </div>

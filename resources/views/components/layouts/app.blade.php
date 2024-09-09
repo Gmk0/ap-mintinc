@@ -18,7 +18,7 @@
         <!-- line awesome -->
         <link rel="stylesheet" href="/assets/css/line-awesome.min.css">
         <!-- Image Uploader -->
-        <link rel="stylesheet" href="/assets/css/image-uploader.min.css">
+
         <!-- jQuery Ui Css -->
         <link rel="stylesheet" href="/assets/css/jquery-ui.css">
         <!-- Main css -->
@@ -26,6 +26,8 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         @vite(['resources/css/app.css','resources/js/app.js'])
+
+        @stack('head')
 
 
         @livewireStyles
@@ -101,7 +103,7 @@
         <!-- Marquee text slider -->
         <script src="/assets/js/jquery.marquee.min.js"></script>
         <!-- Image Uploader -->
-        <script src="/assets/js/image-uploader.min.js"></script>
+
         <!-- jQuery Ui Css -->
         <script src="/assets/js/jquery-ui.min.js"></script>
 
@@ -109,6 +111,8 @@
         <script src="/assets/js/main.js"></script>
 
 
+
+        @stack('scripts')
 
 
      @livewireScriptConfig

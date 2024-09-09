@@ -127,6 +127,18 @@ return [
     'Your Email' => 'Votre e-mail',
     'Phone Number' => 'Numéro de téléphone',
     'Submit Property' => 'Soumettre la propriété',
+    'Votre vision notre Objectif'=> 'Votre vision notre Objectif',
+    'next'=> 'Suivant',
+    'prev'=>'Precendent',
+    'projet_encours'=> 'Projet encours',
+    'maison_vendu'=>'Maison vendu',
+    'projet_realiser'=> 'Projet realiser',
+    'annee_expertise'=>'Annee Expertise',
+    'chambre'=>'Chambre',
+    'size'=>'Superficie',
+    'Property Type'=>'Type de proprietes',
+    'gallery'=>'Gallerie',
+    'Details projets'=>'Details Projets',
 
 
 

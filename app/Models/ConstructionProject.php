@@ -24,7 +24,7 @@ class ConstructionProject extends Model implements HasMedia
         'localisation',
         'Category',
         'client',
-        'cost',
+        'price',
         'status',
         'property_id',
         'at_view',
@@ -52,6 +52,13 @@ class ConstructionProject extends Model implements HasMedia
                 return "{$locale} {$model->title}";
             })
             ->saveSlugsTo('slug');
+    }
+
+
+    public function category()
+    {
+
+        return $this->belongsTo(Category::class);
     }
 
 }

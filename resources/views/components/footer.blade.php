@@ -1,20 +1,6 @@
 <footer class="px-6 py-16 footer ">
     <div class="w-full container-two">
-        <div class="gap-3 flx-between">
-            <div class="footer-top__left">
-                <span class="hidden icon"><img src="/assets/images/icons/envelop-icon.svg" alt=""></span>
-                <h2 class="mb-0 text-white text">{{__('brand.subscribe_our_letter')}}</h2>
-            </div>
-            <form action="#" class="flex items-center gap-3 subscribe-form">
-                <div class="position-relative w-100">
-                    <input type="text" class="common-input common-input--withLeftIcon w-100"
-                        placeholder="Enter Your Email Address">
-                    <span class="input-icon input-icon--left text-gradient font-20 line-height-1"><i
-                            class="far fa-envelope"></i></span>
-                </div>
-                <button type="submit" class="flex-shrink-0 btn btn-main fw-normal">{{__('brand.subscrire')}}</button>
-            </form>
-        </div>
+       @livewire('sendemail')
 
         <div class="grid grid-cols-12 gap-5 py-6">
             <div class="col-span-6 lg:col-span-5">
@@ -91,20 +77,7 @@
                         </svg>
                     </button>
 
-                    <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100"
-                        x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
-                        x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100"
-                        x-transition:leave-end="transform opacity-0 scale-95"
-                        class="absolute right-0 z-10 w-56 mb-2 origin-bottom-right bg-white rounded-md shadow-lg bottom-full ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                            <a href="#" @click.prevent="changeLanguage('en')"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">English</a>
-                            <a href="#" @click.prevent="changeLanguage('fr')"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Français</a>
-                            <a href="#" @click.prevent="changeLanguage('pt')"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Português</a>
-                        </div>
-                    </div>
+
                 </div>
                 <a href="#" class="footer-link">Terms & Condition</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
@@ -115,15 +88,7 @@
 
 
 
-            <script>
-                function changeLanguage(locale) {
-                    const form = document.createElement('form');
-                    form.method = 'GET';
-                    form.action = `{{ route('change.language', '') }}/${locale}`;
-                    document.body.appendChild(form);
-                    form.submit();
-                }
-            </script>
+
 
 
         </div>

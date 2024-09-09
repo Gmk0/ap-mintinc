@@ -3,7 +3,7 @@
 use function Livewire\Volt\{mount,state,title};
 
 
-state(['expertise','nextProperty']);
+state(['expertise','nextProperty'=>null,'previousProperty']);
 
 title('expertise');
 
@@ -18,9 +18,15 @@ mount(function($slug){
         return redirect(route('home'));
     }
 
-    $this->nextExpertise = \App\Models\Expertise::where('id', '>', $this->expertise->id)
+    $this->nextProperty = \App\Models\Expertise::where('id', '>', $this->expertise->id)
     ->orderBy('id')
     ->first();
+
+
+    $this->previousProperty = \App\Models\Expertise::where('id', '<', $this->expertise->id)
+        ->orderBy('id', 'desc') // Tri dans l'ordre décroissant pour obtenir la propriété avec l'ID le plus élevé qui est
+        ->first();
+
 
 
 
@@ -56,10 +62,10 @@ mount(function($slug){
                             <span class="bg-gray-100 section-heading__subtitle"> <span
                                     class="text-gradient fw-semibold">About</span> </span>
                             <h2 class="text-2xl lg:text-4xl section-heading__title">{{$expertise->title}}</h2>
-                            <p class="text-justify section-heading__desc font-18">
+                            <div class="text-justify section-heading__desc font-18">
 
                                 {!! tiptap_converter()->asHTML($expertise->content) !!}
-                            </p>
+                            </div>
                         </div>
 
                     </div>
@@ -67,14 +73,24 @@ mount(function($slug){
             </div>
         </div>
     </section>
-    <div class="flex justify-end mb-8 ">
+    <div class="flex justify-between px-4 my-8 ">
+        <div>
+            @if($previousProperty !=null)
+                <a href="{{route('expertise.oneexpertise',$previousProperty->slug)}}" class="flex-shrink-0 btn btn-main fw-normal">
+                    {{__('brand.prev')}} : {{ $previousProperty->title }}
+                </a>
+                @endif
+        </div>
 
-       @if($nextProperty)
-    <a href=""
-        target="_blank" class="flex-shrink-0 btn btn-main fw-normal">
-        Suivant : {{ $nextProperty->title }}
+        <div>
+
+       @if($nextProperty !=null)
+    <a href="{{route('expertise.oneexpertise',$nextProperty->slug)}}"
+         class="flex-shrink-0 btn btn-main fw-normal">
+        {{__('brand.next')}} : {{ $nextProperty->title }}
     </a>
     @endif
+    </div>
 
     </div>
 

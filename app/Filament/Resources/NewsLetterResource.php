@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PropertySellResource\Pages;
-use App\Filament\Resources\PropertySellResource\RelationManagers;
-use App\Models\PropertySell;
+use App\Filament\Resources\NewsLetterResource\Pages;
+use App\Filament\Resources\NewsLetterResource\RelationManagers;
+use App\Models\NewsLetter;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,12 +13,11 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class PropertySellResource extends Resource
+class NewsLetterResource extends Resource
 {
-    protected static ?string $model = PropertySell::class;
+    protected static ?string $model = NewsLetter::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Properties';
 
     public static function form(Form $form): Form
     {
@@ -31,8 +30,18 @@ class PropertySellResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([Tables\Columns\TextColumn::make('title'),
-            Tables\Columns\TextColumn::make('description'),
+            ->columns([Tables\Columns\TextColumn::make('email')
+                ->searchable(),
+            Tables\Columns\IconColumn::make('status')
+                ,
+            Tables\Columns\TextColumn::make('created_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+            Tables\Columns\TextColumn::make('updated_at')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
                 //
             ])
             ->filters([
@@ -40,6 +49,7 @@ class PropertySellResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -48,19 +58,10 @@ class PropertySellResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPropertySells::route('/'),
-            'create' => Pages\CreatePropertySell::route('/create'),
-            'edit' => Pages\EditPropertySell::route('/{record}/edit'),
+            'index' => Pages\ManageNewsLetters::route('/'),
         ];
     }
 }

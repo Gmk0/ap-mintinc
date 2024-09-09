@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
 
 class PropertyResource extends Resource
@@ -22,6 +23,8 @@ class PropertyResource extends Resource
     protected static ?string $model = Property::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $navigationGroup = 'Properties';
 
     public static function form(Form $form): Form
     {
@@ -65,10 +68,12 @@ class PropertyResource extends Resource
                 Forms\Components\TextInput::make('area')
                     ->required()
                     ,
-            Forms\Components\KeyValue::make('rooms'),
+            Forms\Components\KeyValue::make('rooms')->label('chambres'),
 
 
-            Forms\Components\KeyValue::make('features'),
+            Forms\Components\Repeater::make('features')
+            ->schema([
+                TextInput::make('feature')])->minItems(3),
                 Forms\Components\Select::make('status')
                     ->options(['available'=> 'disponible',
                 'sold'=> "vendu",

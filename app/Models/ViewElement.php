@@ -21,5 +21,14 @@ class ViewElement extends Model
         'team',
         ];
 
+    protected function casts(): array
+    {
+        return [
+            'team' => 'array',
+
+        ];
+    }
+
+
 
 }

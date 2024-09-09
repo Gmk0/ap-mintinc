@@ -6,6 +6,8 @@ use App\Filament\Resources\ViewElementResource\Pages;
 use App\Filament\Resources\ViewElementResource\RelationManagers;
 use App\Models\ViewElement;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -21,6 +23,7 @@ class ViewElementResource extends Resource
     protected static ?string $model = ViewElement::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Admin';
 
     public static function form(Form $form): Form
     {
@@ -28,7 +31,19 @@ class ViewElementResource extends Resource
             ->schema([
                 Forms\Components\Textarea::make('about')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('team')
+                Forms\Components\Repeater::make('team')
+                ->schema([
+                    TextInput::make('name'),
+                TextInput::make('position'),
+
+                FileUpload::make('photo')
+                ->label('Photo')
+                    ->image()
+                    ->required()
+                    ->disk('public') // Assurez-vous d'avoir le bon disque configuré
+                    ->directory('members/photos'),
+
+                    ])
                     ->columnSpanFull(),
             ]);
     }
@@ -37,6 +52,10 @@ class ViewElementResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('about')
+                ->searchable(),
+            Tables\Columns\TextColumn::make('team')
+            ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

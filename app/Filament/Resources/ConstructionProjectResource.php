@@ -15,6 +15,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\Concerns\Translatable;
 
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use FilamentTiptapEditor\TiptapEditor;
+use FilamentTiptapEditor\Enums\TiptapOutput;
+
 
 class ConstructionProjectResource extends Resource
 {
@@ -22,6 +25,7 @@ class ConstructionProjectResource extends Resource
     protected static ?string $model = ConstructionProject::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'Projects';
 
     public static function form(Form $form): Form
     {
@@ -29,29 +33,38 @@ class ConstructionProjectResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('title')
                     ->required(),
-                Forms\Components\Textarea::make('description')
+
+
+          TiptapEditor::make('description')
+                    ->profile('simple')
+                  //  ->tools([]) // individual tools to use in the editor, overwrites profile
+                   // ->disk('string') // optional, defaults to config setting
+                   // ->directory('string or Closure returning a string') // optional, defaults to config setting
+                    //->acceptedFileTypes() // optional, defaults to config setting
+                    ->maxSize('1024') // optional, defaults to config setting
+                    ->output(TiptapOutput::Html) // optional, change the format for saved data, default is html
+                    ->maxContentWidth('5xl')
                     ->columnSpanFull(),
 
-            Forms\Components\RichEditor::make('content')
-                ->columnSpanFull(),
-
             SpatieMediaLibraryFileUpload::make('images')
-            ->collection('properties')
+            ->collection('projets')
             ->preserveFilenames()
 
              ->multiple()
                 ->responsiveImages()
               ->reorderable()
               ->columnSpanFull(),
+            Forms\Components\TextInput::make('price')->numeric(),
 
 
                 Forms\Components\DatePicker::make('start_date'),
                 Forms\Components\DatePicker::make('end_date'),
-                Forms\Components\Textarea::make('localisation')
+                Forms\Components\TextInput::make('localisation')
                     ->columnSpanFull(),
             Forms\Components\TextInput::make('client'),
-            Forms\Components\TextInput::make('category'),
-            Forms\Components\TextInput::make('cost')->numeric(),
+              Forms\Components\Select::make('category_id')
+            ->relationship('category','name'),
+
                 Forms\Components\Toggle::make('afficher')
                     ->required(),
                 Forms\Components\TextInput::make('property_id')
