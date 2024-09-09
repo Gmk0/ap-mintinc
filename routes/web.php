@@ -18,15 +18,15 @@ Volt::route('/about', 'about')->name('about');
 Volt::route('/contact', 'contact')->name('contact');
 Volt::route('/contact', 'contact')->name('contact');
 
-Volt::route('/projects/{slug}', 'projects.detailproject')->name('project.detail');
+Volt::route('/projects/{slug}/details', 'projects.detailproject')->name('project.detail');
 
 Volt::route('/projects', 'projects.allprojects')->name('project.allprojects');
 
 Volt::route('/properties/{slug}/details', 'propertys.detailproperty')->name('property.detailproperty');
 
 
-
 //Volt::route('/properties/category/{slug}','property.category')->name('property.category');
+
 
 Volt::route('/sell-property', 'propertys.sellproperty')->name('property.sellproperty');
 //Volt::route('/properties', 'propertys.allproperty')->name('property.allproperty');

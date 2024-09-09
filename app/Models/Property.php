@@ -17,10 +17,11 @@ class Property extends Model implements HasMedia
 
     use InteractsWithMedia;
 
+    use HasSlug;
 
-    use HasTranslations, HasTranslatableSlug;
+    use HasTranslations;
 
-    public $translatable = ['title', 'description', 'slug'];
+    public $translatable = ['title', 'description'];
 
     public function category(){
 
@@ -63,12 +64,13 @@ class Property extends Model implements HasMedia
     /**
      * Get the options for generating the slug.
      */
+    /**
+     * Get the options for generating the slug.
+     */
     public function getSlugOptions(): SlugOptions
     {
-        return SlugOptions::createWithLocales(['fr', 'en'])
-        ->generateSlugsFrom(function ($model, $locale) {
-            return "{$locale} {$model->title}";
-        })
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
 }

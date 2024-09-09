@@ -49,6 +49,9 @@ class ConstructionProjectResource extends Resource
             SpatieMediaLibraryFileUpload::make('images')
             ->collection('projets')
             ->preserveFilenames()
+            ->imageEditor()
+            ->imagePreviewHeight('100')
+                ->panelLayout('grid')
 
              ->multiple()
                 ->responsiveImages()

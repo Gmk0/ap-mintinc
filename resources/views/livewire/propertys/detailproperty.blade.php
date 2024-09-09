@@ -12,7 +12,12 @@ new class extends Component {
 
 
     public function mount($slug){
+
+
         $this->property = Property::findBySlug($slug);
+
+
+
 
 
 
@@ -43,7 +48,9 @@ new class extends Component {
 }; ?>
 
 <div>
-    <x-bread-cumb title="Proprietes" :firsturl="route('property.allproperty')" :secondelement="$property->title"/>
+    <x-bread-cumb title="Proprietes" :firsturl="route('property.allproperty')" secondelement="{{ Str::limit($property->title, 12,'...') }} "/>
+
+
     <section class="py-32 bg-white property-details">
         <div class="container px-12 container-two">
             <div class="grid grid-cols-12 gap-4">
@@ -87,7 +94,7 @@ new class extends Component {
                                                  @forelse ($property->rooms as $key => $value)
 
                                                 <li>
-                                                    <h6 class="text-base text-gray-700">{{ $key }} : <span class="text-gray-500">{{ $value }}</span>
+                                                    <h6 class="mb-0 amenities-content__title font-16">{{ $key }} : <span class="text-gray-500">{{ $value }}</span>
                                                     </h6>
                                                 </li>
 

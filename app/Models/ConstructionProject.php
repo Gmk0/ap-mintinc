@@ -14,6 +14,7 @@ class ConstructionProject extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+    use HasSlug;
 
 
     protected $fillable = [
@@ -30,9 +31,9 @@ class ConstructionProject extends Model implements HasMedia
         'at_view',
     ];
 
-    use HasTranslations, HasTranslatableSlug;
+    use HasTranslations, HasSlug;
 
-    public $translatable = ['title', 'description', 'Category', 'slug', 'localisation','slug'];
+    public $translatable = ['title', 'description', 'Category',  'localisation'];
 
     // The attributes that should be cast to native types.
     protected $casts = [
@@ -45,15 +46,13 @@ class ConstructionProject extends Model implements HasMedia
     /**
      * Get the options for generating the slug.
      */
+
     public function getSlugOptions(): SlugOptions
     {
-        return SlugOptions::createWithLocales(['fr', 'en'])
-            ->generateSlugsFrom(function ($model, $locale) {
-                return "{$locale} {$model->title}";
-            })
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
-
 
     public function category()
     {

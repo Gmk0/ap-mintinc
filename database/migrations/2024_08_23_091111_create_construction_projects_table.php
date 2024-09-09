@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('construction_projects', function (Blueprint $table) {
             $table->id(); // Auto-incrementing primary key
             $table->json('title');
-            $table->json('slug');
+            $table->string('slug');
             $table->json('content')->nullable();
             $table->string('client')->nullable();
             $table->decimal('price')->nullable();

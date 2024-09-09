@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->json('title'); // Title of the property
             $table->json('description')->nullable();
-            $table->json('slug'); // Description of the property
+            $table->string('slug'); // Description of the property
             $table->decimal('price', 15, 2); // Price of the property
           // Type of property
             $table->string('address')->nullable(); // Address of the

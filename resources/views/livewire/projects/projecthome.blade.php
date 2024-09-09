@@ -9,35 +9,6 @@ with(fn()=>[
 ]);
 
 
-
-
-/*
-
-$constructions=computed(function(){
-
-    return ConstructionProject::latest()->take(4)->get()->map(function($item){
-
-        return [
-            'title'=>$item->title,
-            'description'=>$item->description,
-            'media' => $categories->getMedia('projets')->map(function ($media) {
-                    return [
-                    'url' => $media->getUrl(),
-                    'alt' => $media->name,
-                    ];
-                    }),
-
-
-        ];
-
-    });
- */
-
-
-
-
-
-
  ?>
 
  <div>
@@ -60,8 +31,6 @@ $constructions=computed(function(){
         <div class="grid grid-cols-12 gap-4">
 
 
-
-
             @forelse ($constructions as $index=> $item)
 
             @php
@@ -73,8 +42,6 @@ $constructions=computed(function(){
                     default=>'col-span-5 lg:col-span-4',
                 }
             @endphp
-
-
 
             <div class="{{$colSpan}} ">
                 <div class="gallery-thumb">
@@ -94,62 +61,7 @@ $constructions=computed(function(){
              @empty
 
             @endforelse
-            {{--
-            <div class="col-span-5 lg:col-span-4 ">
-                <div class="gallery-thumb">
 
-                    <div class="project-page-thumb">
-                        <img src="/images/house/construction.jpg" alt="" class="cover-img">
-                        <div class="project-page-content">
-                            <h6 class="project-page-content__title">
-                                <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                    Interior Design</a>
-                            </h6>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-span-7 lg:col-span-8 ">
-                <div class="gallery-thumb">
-
-                    <div class="project-page-thumb">
-                        <img src="/images/house/4.png" alt="" class="cover-img">
-                        <div class="project-page-content">
-                            <h6 class="project-page-content__title">
-                                <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                    Interior Design</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-7 lg:col-span-8 col-xs-6">
-                <div class="gallery-thumb">
-                    <div class="project-page-thumb">
-                        <img src="/images/house/5.png" alt="" class="cover-img">
-                        <div class="project-page-content">
-                            <h6 class="project-page-content__title">
-                                <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                    Interior Design</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-5 lg:col-span-4 ">
-                <div class="gallery-thumb">
-                    <div class="project-page-thumb">
-                        <img src="/images/house/terrain.jpg" alt="" class="cover-img">
-                        <div class="project-page-content">
-                            <h6 class="project-page-content__title">
-                                <a href="{{route('project.detail')}}" class="text-lg link">Where Innovation Meets
-                                    Interior Design</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>--}}
         </div>
     </div>
 </section>

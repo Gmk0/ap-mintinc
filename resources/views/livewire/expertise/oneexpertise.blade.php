@@ -73,7 +73,7 @@ mount(function($slug){
             </div>
         </div>
     </section>
-    <div class="flex justify-between px-4 my-8 ">
+    <div class="flex justify-between gap-4 px-4 my-8 ">
         <div>
             @if($previousProperty !=null)
                 <a href="{{route('expertise.oneexpertise',$previousProperty->slug)}}" class="flex-shrink-0 btn btn-main fw-normal">
