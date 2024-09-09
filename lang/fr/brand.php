@@ -77,6 +77,7 @@ return [
     'en_savoir_plus'=> 'vous voulez en savoir plus sur',
     'question_response'=> " Pour votre bien immobilier, nous offrons un accompagnement complet : conseils personnalisés, rénovations et gestion. C’est pourquoi de nombreux propriétaires nous font confiance.",
     'nos_service'=>'Nos service',
+
     'contact_us'=>'Contacter nous',
     'location'=>'Localisation',
     'Sell property' => 'Vendre une propriété',
@@ -139,8 +140,6 @@ return [
     'Property Type'=>'Type de proprietes',
     'gallery'=>'Gallerie',
     'Details projets'=>'Details Projets',
-
-
 
 ];
 
