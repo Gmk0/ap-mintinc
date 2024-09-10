@@ -22,7 +22,7 @@
                             <a href="{{route('project.allprojects')}}" class="nav-submenu__link"> {{__('brand.services')}} </a>
                         </li>
                         <li class="nav-submenu__item">
-                            <a href="project-details.html" class="nav-submenu__link">Project Details</a>
+                            <a href="{{__('brand.project.allprojects')}}" class="nav-submenu__link">Project Details</a>
                         </li>
                     </ul>
                 </li>

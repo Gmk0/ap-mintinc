@@ -51,7 +51,7 @@ try{
             <span class="bg-gray-100 section-heading__subtitle">
                 <span class="text-gradient fw-semibold">{{__('brand.contact')}}</span>
             </span>
-            <h2 class="text-3xl section-heading__title lg:text-4xl">{{('brand.contact_us')}}</h2>
+            <h2 class="text-3xl section-heading__title lg:text-4xl">{{__('brand.contact_us')}}</h2>
         </div>
         <div class="grid grid-cols-12 gap-4">
             <div class="col-span-12 lg:col-span-4">
