@@ -5,8 +5,8 @@
         <div class="grid grid-cols-12 gap-5 py-6">
             <div class="col-span-6 lg:col-span-5">
                 <div class="footer-item">
-                    <div class="footer-item__logo">
-                        <a href="index.html"> <img src="/images/logo.png" alt=""></a>
+                    <div class="">
+                        <a href="/"> <img src="/images/icons/2.png" class="w-32 h-32" alt="logo"></a>
                     </div>
                 <p class="footer-item__desc max-w-unset">
                   {{__('brand.footer_desc')}}
