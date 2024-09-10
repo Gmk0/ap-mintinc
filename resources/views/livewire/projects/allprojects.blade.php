@@ -31,7 +31,7 @@ with(fn()=>[
                 <img src="{{ $project->getFirstMediaUrl('projets') }}" alt="{{ $project->title }}" class="cover-img">
                 <div class="project-page-content">
                     <h6 class="project-page-content__title">
-                        <a href="{{ route('project.detail', $project->id) }}" class="link">{{ $project->title }}</a>
+                        <a href="{{ route('project.detail', $project->slug) }}" class="link">{{ $project->title }}</a>
                     </h6>
                 </div>
             </div>
@@ -44,7 +44,7 @@ with(fn()=>[
                         <img src="{{ $project->getFirstMediaUrl('projets') }}" alt="{{ $project->title }}" class="cover-img">
                         <div class="project-page-content">
                             <h6 class="project-page-content__title">
-                                <a href="{{ route('project.detail', $project->id) }}" class="link">{{ $project->title }}</a>
+                                <a href="{{ route('project.detail', $project->slug) }}" class="link">{{ $project->title }}</a>
                             </h6>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ with(fn()=>[
                             alt="{{ $constructions[$index + 1]->title }}" class="cover-img">
                         <div class="project-page-content">
                             <h6 class="project-page-content__title">
-                                <a href="{{ route('project.detail', $constructions[$index + 1]->id) }}" class="link">{{
+                                <a href="{{ route('project.detail', $constructions[$index + 1]->slug) }}" class="link">{{
                                     $constructions[$index + 1]->title }}</a>
                             </h6>
                         </div>

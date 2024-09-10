@@ -35,7 +35,7 @@ with(fn()=>[
 
             @php
                 $colSpan=match($index){
-                    0=>'col-span-6 lg:col-span-6',
+                    0=>'col-span-12 lg:col-span-6',
                     1=>"col-span-6 lg:col-span-6",
                     2=>'col-span-6 lg:col-span-6',
                     3=>'col-span-6 lg:col-span-6',

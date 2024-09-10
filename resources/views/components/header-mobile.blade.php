@@ -21,11 +21,12 @@
                         <li class="nav-submenu__item">
                             <a href="{{route('project.allprojects')}}" class="nav-submenu__link"> {{__('brand.services')}} </a>
                         </li>
-                        <li class="nav-submenu__item">
-                            <a href="{{__('brand.project.allprojects')}}" class="nav-submenu__link">Project Details</a>
-                        </li>
+
                     </ul>
                 </li>
+                <li class="nav-menu__item">
+                        <a href="{{route('project.allprojects')}}" class="nav-menu__link">{{__('brand.project.allprojects')}}</a>
+                    </li>
 
                 <li class="nav-menu__item">
                     <a href="{{route('about')}}" class="nav-menu__link">{{__('brand.about_us')}}</a>
