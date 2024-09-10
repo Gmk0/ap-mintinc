@@ -21,6 +21,7 @@ class ConstructionProject extends Model implements HasMedia
         'title',
         'description',
         'start_date',
+        'slug',
         'end_date',
         'localisation',
         'Category',
@@ -33,7 +34,7 @@ class ConstructionProject extends Model implements HasMedia
 
     use HasTranslations, HasSlug;
 
-    public $translatable = ['title', 'description', 'Category',  'localisation'];
+    public $translatable = ['title', 'description','localisation'];
 
     // The attributes that should be cast to native types.
     protected $casts = [
