@@ -33,7 +33,7 @@ new class extends Component {
                     <div class="project-details__content">
                         <h2 class="text-4xl project-details__title">{{$construction->title}}</h2>
 
-                        <div class="prose">
+                        <div class="">
 
 
                             {!! tiptap_converter()->asHTML($construction->description) !!}

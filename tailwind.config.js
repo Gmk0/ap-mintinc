@@ -2,7 +2,7 @@
 export default {
     content: [
 		"./resources/**/*.blade.php",
-		 './vendor/awcodes/filament-tiptap-editor/resources/**/*.blade.php',
+		"./vendor/awcodes/filament-tiptap-editor/resources/**/*.blade.php",
 
 	],
     theme: {
