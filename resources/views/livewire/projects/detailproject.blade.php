@@ -61,8 +61,8 @@ new class extends Component {
 
 
                             <li class="project-sidebar__item">
-                                <span class="project-sidebar__text font-12">{{$construction->price}}</span>
-                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">cout du projet  </h6>
+                                <span class="project-sidebar__text font-12">cout Project</span>
+                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->price}} </h6>
                             </li>
                             @endif
 
@@ -74,7 +74,7 @@ new class extends Component {
                             @endif
                             <li class="project-sidebar__item">
                                 <span class="project-sidebar__text font-12">Date</span>
-                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->end_date->format('Y/m/d')}}</h6>
+                                <h6 class="mb-0 font-semibold project-sidebar__title font-16">{{$construction->end_date->format('d/m/Y')}}</h6>
                             </li>
                         </ul>
                         <ul class="mt-4 social-share-list style-two lg:mt-5">
@@ -108,7 +108,7 @@ new class extends Component {
 
                 <div class="grid grid-cols-12 gap-4">
                     @foreach ($construction->getMedia('*') as $media)
-                    <div class="col-span-3">
+                    <div class="lg:col-span-3  col-span-6">
                         <div class="gallery-thumb">
                             <img src="{{$media->getUrl()}}" alt="" class="{{$media->name}}">
                             <a href="{{$media->getUrl()}}" class="gallery-thumb__link gallery-popup">

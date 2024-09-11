@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="nav-menu__item">
-                        <a href="{{route('project.allprojects')}}" class="nav-menu__link">{{__('brand.project.allprojects')}}</a>
+                        <a href="{{route('project.allprojects')}}" class="nav-menu__link">{{__('brand.Project')}}</a>
                     </li>
 
                 <li class="nav-menu__item">

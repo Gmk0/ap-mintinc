@@ -64,21 +64,7 @@
         <div class="gap-3 bottom-footer__inner flx-between">
             <p class="bottom-footer__text"> &copy; Ap 2024 | All Rights Reserved.</p>
             <div class="footer-links">
-                <div x-data="{ open: false, selectedLanguage: '{{ app()->getLocale() }}' }" class="relative inline-block text-left">
-                    <button @click="open = !open" type="button"
-                        class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-100 bg-gray-700 border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        <span
-                            x-text="selectedLanguage === 'en' ? 'English' : selectedLanguage === 'fr' ? 'Français' : 'Português'"></span>
-                        <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                            aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 3.414l3.293 3.879a1 1 0 001.414-1.414l-4-4a1 1 0 00-1.414 0l-4 4a1 1 0 000 1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
 
-
-                </div>
                 <a href="#" class="footer-link">Terms & Condition</a>
                 <a href="#" class="footer-link">Privacy Policy</a>
                 <a href="#" class="footer-link">Contact Us</a>

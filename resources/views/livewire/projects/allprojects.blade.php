@@ -20,13 +20,13 @@ with(fn()=>[
 
     <x-bread-cumb title="Projets" />
 <section class="py-8 project-page">
-    <div class="container px-12 container-two">
+    <div class="container lg:px-12 px-6  container-two">
         <div class="grid grid-cols-12 gap-4">
 
 
           @foreach ($constructions as $index => $project)
         @if ($index % 3 == 0)
-        <div class="col-span-6 md:col-span-4 sm:col-span-6">
+        <div class="col-span-12 md:col-span-4 sm:col-span-6">
             <div class="project-page-thumb">
                 <img src="{{ $project->getFirstMediaUrl('projets') }}" alt="{{ $project->title }}" class="cover-img">
                 <div class="project-page-content">
@@ -37,7 +37,7 @@ with(fn()=>[
             </div>
         </div>
         @elseif ($index % 3 == 1)
-        <div class="col-span-6 md:col-span-4 sm:col-span-6">
+        <div class="col-span-12 md:col-span-4 sm:col-span-6">
             <div class="grid grid-cols-12 gap-4">
                 <div class="col-span-12">
                     <div class="project-page-thumb">
