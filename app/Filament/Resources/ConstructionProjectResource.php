@@ -36,7 +36,7 @@ class ConstructionProjectResource extends Resource
 
 
           TiptapEditor::make('description')
-                    ->profile('simple')
+                    ->profile('default')
                   //  ->tools([]) // individual tools to use in the editor, overwrites profile
                    // ->disk('string') // optional, defaults to config setting
                    // ->directory('string or Closure returning a string') // optional, defaults to config setting
@@ -50,6 +50,7 @@ class ConstructionProjectResource extends Resource
             ->collection('projets')
             ->preserveFilenames()
             ->imageEditor()
+            ->optimize('webp')
             ->imagePreviewHeight('100')
                 ->panelLayout('grid')
 

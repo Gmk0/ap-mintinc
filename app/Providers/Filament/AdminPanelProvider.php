@@ -18,6 +18,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Joaopaulolndev\FilamentEditEnv\FilamentEditEnvPlugin;
 
 use Filament\SpatieLaravelTranslatablePlugin;
 
@@ -29,9 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+
             ->spa(true)
             ->plugin(SpatieLaravelTranslatablePlugin::make()
-            ->defaultLocales(['en', 'fr','pt']),)
+            ->defaultLocales(['fr','en','pt']),)
             ->login()
             ->colors([
                 'primary' => Color::Green,
@@ -61,6 +63,10 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])->plugin(\TomatoPHP\FilamentPWA\FilamentPWAPlugin::make());
+            ])->plugin(\TomatoPHP\FilamentPWA\FilamentPWAPlugin::make(),
+
+            FilamentEditEnvPlugin::make()
+                ->showButton(true)
+                ->setIcon('heroicon-o-cog'),);
     }
 }
