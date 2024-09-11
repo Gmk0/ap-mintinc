@@ -28,15 +28,15 @@ new class extends Component {
             <div class="project-details__thumb">
                 <img src="{{$construction->getFirstMediaUrl('projets')}}" class="object-fill w-full h-auto" alt="">
             </div>
-            <div class="grid grid-cols-12 gap-4">
+            <div class="grid px-6 grid-cols-12 gap-4">
                 <div class="col-span-12 lg:col-span-8">
                     <div class="project-details__content">
                         <h2 class="text-4xl project-details__title">{{$construction->title}}</h2>
 
-                        <div class="">
+                        <div class="prose lg:prose-2xl justify-center  prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
 
 
-                            {!! tiptap_converter()->asHTML($construction->description) !!}
+                            {!! tiptap_converter()->asHtml($construction->description) !!}
 
 
 
