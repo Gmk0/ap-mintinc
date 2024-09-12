@@ -24,11 +24,11 @@ new class extends Component {
 <div>
     <x-bread-cumb title="{{__('brand.Details projets')}}" :firsturl="route('project.allprojects')" secondelement="{{ Str::limit($construction->title, 12,'...') }}"  />
     <section class="py-16 project-details">
-        <div class="container px-12 container-two">
+        <div class="container md:px-12 px-6  container-two">
             <div class="project-details__thumb">
                 <img src="{{$construction->getFirstMediaUrl('projets')}}" class="object-fill w-full h-auto" alt="">
             </div>
-            <div class="grid px-6 grid-cols-12 gap-4">
+            <div class="grid  grid-cols-12 gap-4">
                 <div class="col-span-12 lg:col-span-8">
                     <div class="project-details__content">
                         <h2 class="text-4xl project-details__title">{{$construction->title}}</h2>

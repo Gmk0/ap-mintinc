@@ -32,7 +32,7 @@ new class extends Component {
 
 <div>
 
-    <x-bread-cumb title="Proprietes" />
+    <x-bread-cumb title="{{__('brand.Proprietes')}}" />
 <!-- ==================== Breadcrumb End Here ==================== -->
 
 <!-- ======================== Property Section Start ============================ -->

@@ -34,7 +34,7 @@ public function mount(){
 <div>
 
 
-    <x-bread-cumb title="A propos de nous" />
+    <x-bread-cumb title="{{__('brand.about_us')}}" />
     <!-- ==================== Breadcrumb End Here ==================== -->
 
     <!-- ============================= About Section Start =========================== -->
@@ -44,7 +44,7 @@ public function mount(){
                 <div class="col-span-12 lg:col-span-6">
                     <div class="about-three-thumb">
                         <div class="about-three-thumb__inner">
-                            <img src="images/house/2.png" alt="">
+                            <img src="/images/house/2.png" alt="">
                             <div class="hidden project-content">
                                 <div class="project-content__inner">
                                     <h2 class="project-content__number"> 10k+ </h2>
@@ -61,7 +61,7 @@ public function mount(){
                         <div class="section-heading style-left">
                             <span class="bg-gray-100 section-heading__subtitle"> <span
                                     class="text-gradient fw-semibold">{{__('brand.about_us')}}</span> </span>
-                            <h2 class="text-2xl text-4xl section-heading__title">{{__('brand.Votre vision notre Objectif')}}</h2>
+                            <h2 class="text-2xl lg:text-4xl section-heading__title">{{__('brand.Votre vision notre Objectif')}}</h2>
                             <p class="text-justify section-heading__desc font-18">{{$viewElement->about}}
                             </p>
                         </div>
@@ -84,7 +84,7 @@ public function mount(){
                 <div class="section-heading__inner">
                     <span class="section-heading__subtitle"> <span class="text-gradient fw-semibold">Nos
                             Professionnels</span> </span>
-                    <h2 class="text-2xl text-4xl section-heading__title">{{__('brand.about_proffesional')}}</h2>
+                    <h2 class="text-2xl lg:text-4xl section-heading__title">{{__('brand.about_proffesional')}}</h2>
                 </div>
                 <a href="#" class="hidden btn btn-main">Learn More <span class="icon-right"> <i class="fas fa-plus"></i>
                     </span>
@@ -105,7 +105,7 @@ public function mount(){
                         @else
 
                         <div class="team-item__thumb">
-                            <img src="assets/images/thumbs/team1.png" alt="" class="cover-img">
+                            <img src="/assets/images/thumbs/team1.png" alt="" class="cover-img">
                         </div>
                         @endif
 
